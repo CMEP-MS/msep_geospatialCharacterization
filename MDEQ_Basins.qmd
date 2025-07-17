@@ -1,0 +1,5 @@
+# MDEQ Basins  
+
+There are several waterways that don't actually end up in either the Pearl or Pascagoula Rivers. So the Mississippi Department of Environmental Quality uses a slightly different division.  
+
+NEED TO CONFIRM, but I think: HUC12s are the same between MDEQ's classification and the USGS HUCs. They're just grouped differently, and the streams that empty into bays or straight into the Sound are the 'Coastal Streams Basin'. There is also a 'Coastal Offshore' grouping, that is comprised of the Sound itself, the islands, and the 3-mile zone beyond the islands.    

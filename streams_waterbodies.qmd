@@ -1,0 +1,15 @@
+# Streams and Waterbodies  
+
+This file can contain:  
+
+## Amount of water  
+
+e.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed  
+
+## Designated Uses  
+
+from DEQ, what's designated for shellfishing vs. drinking water vs. fish and wildlife (etc.)  
+
+## Impairments  
+
+TMDLs! How many, where are they, what are the TMDLs for.  

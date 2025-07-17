@@ -1,0 +1,6 @@
+# EPA Ecoregions  
+
+For some geological classification that isn't based on watershed boundaries, we turn to the [EPA's Ecoregions](https://www.epa.gov/eco-research/ecoregions).  
+
+
+Intent here is to list which ecoregions are in our watershed, and which are in each basin (using MDEQ's divisions). And maybe how much are of each basin belongs to each ecoregion. Plus show a map.  

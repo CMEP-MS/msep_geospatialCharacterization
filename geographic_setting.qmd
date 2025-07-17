@@ -1,0 +1,5 @@
+# Geographic Setting  
+
+Some info here about different ways of describing where we are and what comprises the watershed: USGS HUCs, DEQ's division into different basins, and EPA EcoRegions.
+
+Possibly also the definitions from the CCMP of MS Sound, MS Sound Estuary, and MS Sound Watershed.  

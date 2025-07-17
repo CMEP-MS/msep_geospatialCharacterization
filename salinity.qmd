@@ -1,0 +1,3 @@
+# Salinity  
+
+Summarize the info from the Gulf Data Atlas (e.g. the maps that went into the CCMP). Would be great to summarize the USGS salinity data and DMR's sampling data as well - some seasonal and annual details would be great.  

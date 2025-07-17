@@ -1,0 +1,3 @@
+# People and Land Use  
+
+Here's where population calculations and land use/land cover summaries can be generated.  
