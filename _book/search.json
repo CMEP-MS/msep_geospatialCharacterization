@@ -69,7 +69,18 @@
     "href": "streams_waterbodies.html",
     "title": "6  Streams and Waterbodies",
     "section": "",
-    "text": "6.1 Amount of water\ne.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed",
+    "text": "6.1 Amount of water\ne.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed\nTO-DO: Calculate this by basin (MDEQ definitions, not HUCs)",
+    "crumbs": [
+      "Hydrology",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+    ]
+  },
+  {
+    "objectID": "streams_waterbodies.html#amount-of-water",
+    "href": "streams_waterbodies.html#amount-of-water",
+    "title": "6  Streams and Waterbodies",
+    "section": "",
+    "text": "6.1.1 Stream Lengths\n\n\nReading layer `EPA_NHDplus_flowline_MSEP' from data source \n  `C:\\Users\\kc2741\\Documents\\CMEP Repos\\msep_geospatialCharacterization\\data\\processed\\EPA_NHDplus_flowline_MSEP.gpkg' \n  using driver `GPKG'\nSimple feature collection with 33808 features and 14 fields\nGeometry type: MULTILINESTRING\nDimension:     XY\nBounding box:  xmin: -90.60984 ymin: 30.03385 xmax: -88.02912 ymax: 33.38485\nGeodetic CRS:  NAD83\n\n\n\n\nTable 6.1: Length (mi) of stream types in the MSEP watershed\n\n\n\n\n\n\nType\ntotal_miles\n\n\n\n\nArtificial Path\n1,496.8\n\n\nCanal/Ditch\n145.3\n\n\nCoastline\n308.7\n\n\nConnector\n26.6\n\n\nStream/River\n5.2\n\n\nStream/River: Hydrographic Category = Intermittent\n20,350.3\n\n\nStream/River: Hydrographic Category = Perennial\n11,730.7\n\n\n\n\n\n\n\n\n\n\n6.1.2 Waterbody Areas\n\n\nReading layer `EPA_NHDplus_waterbody_MSEP' from data source \n  `C:\\Users\\kc2741\\Documents\\CMEP Repos\\msep_geospatialCharacterization\\data\\processed\\EPA_NHDplus_waterbody_MSEP.gpkg' \n  using driver `GPKG'\nSimple feature collection with 5282 features and 12 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -90.61443 ymin: 30.03375 xmax: -88.07912 ymax: 33.35289\nGeodetic CRS:  NAD83\n\n\n\n\nTable 6.2: Total area (acres) of water body types in the MSEP watershed\n\n\n\n\n\n\n\n\n\n\nType\ntotal_acres\n\n\n\n\nLake/Pond: Hydrographic Category = Intermittent\n70.6\n\n\nLake/Pond: Hydrographic Category = Perennial\n67,602.0\n\n\nLake/Pond: Hydrographic Category = Perennial; Stage = Average Water Elevation\n27,726.5\n\n\nLake/Pond: Hydrographic Category = Perennial; Stage = Normal Pool\n9.5\n\n\nReservoir\n48.2\n\n\nReservoir: Reservoir Type = Aquaculture\n471.6\n\n\nReservoir; Reservoir Type = Treatment\n954.8\n\n\nSwamp/Marsh\n251,495.2",
     "crumbs": [
       "Hydrology",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
@@ -92,6 +103,17 @@
     "title": "6  Streams and Waterbodies",
     "section": "6.3 Impairments",
     "text": "6.3 Impairments\nTMDLs! How many, where are they, what are the TMDLs for.",
+    "crumbs": [
+      "Hydrology",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+    ]
+  },
+  {
+    "objectID": "streams_waterbodies.html#data-sources",
+    "href": "streams_waterbodies.html#data-sources",
+    "title": "6  Streams and Waterbodies",
+    "section": "6.4 Data Sources",
+    "text": "6.4 Data Sources\nThe .qmd file that generated this section was: streams_waterbodies.qmd.\nStream Lengths and Waterbody Areas were calculated from the EPA’s NHDPlus dataset.",
     "crumbs": [
       "Hydrology",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"

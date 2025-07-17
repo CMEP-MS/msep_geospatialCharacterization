@@ -1,10 +1,91 @@
 # Streams and Waterbodies  
 
-This file can contain:  
+```{r}
+library(tidyverse)
+library(msepBoundaries)
+library(sf)
+library(units)
+library(tigris)
+options(tigris_use_cache = TRUE)
+library(foreign)
+```
+
+```{r}
+flowline_in <- here::here("data",
+                           "processed",
+                           "EPA_NHDplus_flowline_MSEP.gpkg")
+waterbody_in <- here::here("data", 
+                           "processed",
+                           "EPA_NHDplus_waterbody_MSEP.gpkg")
+```
+
+```{r}
+db_codes <- read.dbf(here::here("data",
+                                "EPA NHDPlus",
+                                "fcode_explanations",
+                                "NHDFCode.dbf")) |> 
+    select(FCode, Descriptio)
+```
+
+
 
 ## Amount of water  
 
-e.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed  
+e.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed 
+
+**TO-DO: Calculate this by basin (MDEQ definitions, not HUCs)**  
+
+### Stream Lengths  
+
+```{r}
+#| label: tbl-stream-lengths
+#| tbl-cap: "Length (mi) of stream types in the MSEP watershed"
+
+flowlines <- st_read(flowline_in)
+
+stream_lengths <- flowlines |> 
+    mutate(length = st_length(geom),
+           length_mi = as.numeric(set_units(length, "mi"))) |> 
+    st_drop_geometry() |> 
+    left_join(db_codes, by = c("FCODE" = "FCode"))
+
+stream_lengths_by_description <- stream_lengths |> 
+    summarize(.by = Descriptio,
+              total_miles = sum(length_mi, na.rm = TRUE)) |> 
+    rename(Type = Descriptio) |> 
+    arrange(Type)
+
+knitr::kable(stream_lengths_by_description,
+             digits = 1,
+             format.args = list(big.mark = ","))
+```
+
+
+
+### Waterbody Areas  
+
+```{r}
+#| label: tbl-waterbody-areas
+#| tbl-cap: "Total area (acres) of water body types in the MSEP watershed"
+
+waterbodies <- st_read(waterbody_in)
+
+areas <- waterbodies |> 
+    mutate(area = st_area(geom),
+           area_acres = as.numeric(set_units(area, "acres"))) |> 
+    st_drop_geometry() |> 
+    left_join(db_codes, by = c("fcode" = "FCode"))
+
+areas_by_description <- areas |> 
+    summarize(.by = Descriptio,
+              total_acres = sum(area_acres, na.rm = TRUE)) |> 
+    rename(Type = Descriptio) |> 
+    arrange(Type)
+
+knitr::kable(areas_by_description,
+             digits = 1,
+             format.args = list(big.mark = ","))
+```
 
 ## Designated Uses  
 
@@ -13,3 +94,10 @@ from DEQ, what's designated for shellfishing vs. drinking water vs. fish and wil
 ## Impairments  
 
 TMDLs! How many, where are they, what are the TMDLs for.  
+
+
+## Data Sources  
+
+**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**.  
+
+Stream Lengths and Waterbody Areas were calculated from the [EPA's NHDPlus](https://www.epa.gov/waterdata/nhdplus-national-hydrography-dataset-plus) dataset. 

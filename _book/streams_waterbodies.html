@@ -235,9 +235,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#amount-of-water" id="toc-amount-of-water" class="nav-link active" data-scroll-target="#amount-of-water"><span class="header-section-number">6.1</span> Amount of water</a></li>
+  <li><a href="#amount-of-water" id="toc-amount-of-water" class="nav-link active" data-scroll-target="#amount-of-water"><span class="header-section-number">6.1</span> Amount of water</a>
+  <ul class="collapse">
+  <li><a href="#stream-lengths" id="toc-stream-lengths" class="nav-link" data-scroll-target="#stream-lengths"><span class="header-section-number">6.1.1</span> Stream Lengths</a></li>
+  <li><a href="#waterbody-areas" id="toc-waterbody-areas" class="nav-link" data-scroll-target="#waterbody-areas"><span class="header-section-number">6.1.2</span> Waterbody Areas</a></li>
+  </ul></li>
   <li><a href="#designated-uses" id="toc-designated-uses" class="nav-link" data-scroll-target="#designated-uses"><span class="header-section-number">6.2</span> Designated Uses</a></li>
   <li><a href="#impairments" id="toc-impairments" class="nav-link" data-scroll-target="#impairments"><span class="header-section-number">6.3</span> Impairments</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">6.4</span> Data Sources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/streams_waterbodies.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -263,10 +268,146 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This file can contain:</p>
 <section id="amount-of-water" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="amount-of-water"><span class="header-section-number">6.1</span> Amount of water</h2>
 <p>e.g.&nbsp;how many miles of streams, how many acres of lakes/ponds/etc. in the watershed</p>
+<p><strong>TO-DO: Calculate this by basin (MDEQ definitions, not HUCs)</strong></p>
+<section id="stream-lengths" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="stream-lengths"><span class="header-section-number">6.1.1</span> Stream Lengths</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `EPA_NHDplus_flowline_MSEP' from data source 
+  `C:\Users\kc2741\Documents\CMEP Repos\msep_geospatialCharacterization\data\processed\EPA_NHDplus_flowline_MSEP.gpkg' 
+  using driver `GPKG'
+Simple feature collection with 33808 features and 14 fields
+Geometry type: MULTILINESTRING
+Dimension:     XY
+Bounding box:  xmin: -90.60984 ymin: 30.03385 xmax: -88.02912 ymax: 33.38485
+Geodetic CRS:  NAD83</code></pre>
+</div>
+<div id="tbl-stream-lengths" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stream-lengths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: Length (mi) of stream types in the MSEP watershed
+</figcaption>
+<div aria-describedby="tbl-stream-lengths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: right;">total_miles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Artificial Path</td>
+<td style="text-align: right;">1,496.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Canal/Ditch</td>
+<td style="text-align: right;">145.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Coastline</td>
+<td style="text-align: right;">308.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Connector</td>
+<td style="text-align: right;">26.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stream/River</td>
+<td style="text-align: right;">5.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stream/River: Hydrographic Category = Intermittent</td>
+<td style="text-align: right;">20,350.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stream/River: Hydrographic Category = Perennial</td>
+<td style="text-align: right;">11,730.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="waterbody-areas" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="waterbody-areas"><span class="header-section-number">6.1.2</span> Waterbody Areas</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `EPA_NHDplus_waterbody_MSEP' from data source 
+  `C:\Users\kc2741\Documents\CMEP Repos\msep_geospatialCharacterization\data\processed\EPA_NHDplus_waterbody_MSEP.gpkg' 
+  using driver `GPKG'
+Simple feature collection with 5282 features and 12 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -90.61443 ymin: 30.03375 xmax: -88.07912 ymax: 33.35289
+Geodetic CRS:  NAD83</code></pre>
+</div>
+<div id="tbl-waterbody-areas" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-waterbody-areas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.2: Total area (acres) of water body types in the MSEP watershed
+</figcaption>
+<div aria-describedby="tbl-waterbody-areas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 86%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: right;">total_acres</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Lake/Pond: Hydrographic Category = Intermittent</td>
+<td style="text-align: right;">70.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lake/Pond: Hydrographic Category = Perennial</td>
+<td style="text-align: right;">67,602.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lake/Pond: Hydrographic Category = Perennial; Stage = Average Water Elevation</td>
+<td style="text-align: right;">27,726.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lake/Pond: Hydrographic Category = Perennial; Stage = Normal Pool</td>
+<td style="text-align: right;">9.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reservoir</td>
+<td style="text-align: right;">48.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reservoir: Reservoir Type = Aquaculture</td>
+<td style="text-align: right;">471.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reservoir; Reservoir Type = Treatment</td>
+<td style="text-align: right;">954.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Swamp/Marsh</td>
+<td style="text-align: right;">251,495.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
 </section>
 <section id="designated-uses" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="designated-uses"><span class="header-section-number">6.2</span> Designated Uses</h2>
@@ -275,6 +416,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="impairments" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="impairments"><span class="header-section-number">6.3</span> Impairments</h2>
 <p>TMDLs! How many, where are they, what are the TMDLs for.</p>
+</section>
+<section id="data-sources" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">6.4</span> Data Sources</h2>
+<p><strong>The <code>.qmd</code> file</strong> that generated this section was: <strong>streams_waterbodies.qmd</strong>.</p>
+<p>Stream Lengths and Waterbody Areas were calculated from the <a href="https://www.epa.gov/waterdata/nhdplus-national-hydrography-dataset-plus">EPA’s NHDPlus</a> dataset.</p>
 
 
 </section>
