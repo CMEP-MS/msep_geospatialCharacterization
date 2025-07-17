@@ -6,7 +6,7 @@ execute:
   warning: false
   message: false
   error: true
-  cache: false
+  cache: true
   enabled: true
 
 book:
@@ -38,9 +38,9 @@ book:
         - population.qmd
         - landuse_landcover.qmd
     - summary.qmd
-    - references.qmd
+    # - references.qmd
 
-bibliography: references.bib
+# bibliography: references.bib
 
 format:
   html:

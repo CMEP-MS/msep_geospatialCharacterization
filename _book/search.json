@@ -1,0 +1,194 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Characteristics of the Mississippi Sound Estuary and Watershed",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n\n[1] 2",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "HUCs.html",
+    "href": "HUCs.html",
+    "title": "1  HUCs",
+    "section": "",
+    "text": "Nice explanation of HUCs this USGS page.\nThe HUCs that make up the Mississippi Sound Watershed are 0317 (Pascagoula) and 0318 (Pearl).\nShow some mappy breakdowns.",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>HUCs</span>"
+    ]
+  },
+  {
+    "objectID": "MDEQ_Basins.html",
+    "href": "MDEQ_Basins.html",
+    "title": "2  MDEQ Basins",
+    "section": "",
+    "text": "There are several waterways that don’t actually end up in either the Pearl or Pascagoula Rivers. So the Mississippi Department of Environmental Quality uses a slightly different division.\nNEED TO CONFIRM, but I think: HUC12s are the same between MDEQ’s classification and the USGS HUCs. They’re just grouped differently, and the streams that empty into bays or straight into the Sound are the ‘Coastal Streams Basin’. There is also a ‘Coastal Offshore’ grouping, that is comprised of the Sound itself, the islands, and the 3-mile zone beyond the islands.",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>MDEQ Basins</span>"
+    ]
+  },
+  {
+    "objectID": "EPA_Ecoregions.html",
+    "href": "EPA_Ecoregions.html",
+    "title": "3  EPA Ecoregions",
+    "section": "",
+    "text": "For some geological classification that isn’t based on watershed boundaries, we turn to the EPA’s Ecoregions.\nIntent here is to list which ecoregions are in our watershed, and which are in each basin (using MDEQ’s divisions). And maybe how much are of each basin belongs to each ecoregion. Plus show a map.",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+    ]
+  },
+  {
+    "objectID": "precipitation.html",
+    "href": "precipitation.html",
+    "title": "4  Precipitation",
+    "section": "",
+    "text": "Make the precip maps here.",
+    "crumbs": [
+      "Climatology",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Precipitation</span>"
+    ]
+  },
+  {
+    "objectID": "temperature.html",
+    "href": "temperature.html",
+    "title": "5  Temperature",
+    "section": "",
+    "text": "Some descriptions and maps of temperature normals",
+    "crumbs": [
+      "Climatology",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "streams_waterbodies.html",
+    "href": "streams_waterbodies.html",
+    "title": "6  Streams and Waterbodies",
+    "section": "",
+    "text": "6.1 Amount of water\ne.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed",
+    "crumbs": [
+      "Hydrology",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+    ]
+  },
+  {
+    "objectID": "streams_waterbodies.html#designated-uses",
+    "href": "streams_waterbodies.html#designated-uses",
+    "title": "6  Streams and Waterbodies",
+    "section": "6.2 Designated Uses",
+    "text": "6.2 Designated Uses\nfrom DEQ, what’s designated for shellfishing vs. drinking water vs. fish and wildlife (etc.)",
+    "crumbs": [
+      "Hydrology",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+    ]
+  },
+  {
+    "objectID": "streams_waterbodies.html#impairments",
+    "href": "streams_waterbodies.html#impairments",
+    "title": "6  Streams and Waterbodies",
+    "section": "6.3 Impairments",
+    "text": "6.3 Impairments\nTMDLs! How many, where are they, what are the TMDLs for.",
+    "crumbs": [
+      "Hydrology",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+    ]
+  },
+  {
+    "objectID": "freshwater_inflows.html",
+    "href": "freshwater_inflows.html",
+    "title": "7  Freshwater Inflows",
+    "section": "",
+    "text": "Pearl River, Pascagoula River, bays. Do some summarizing based on USGS gage data?",
+    "crumbs": [
+      "Hydrology",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Freshwater Inflows</span>"
+    ]
+  },
+  {
+    "objectID": "salinity.html",
+    "href": "salinity.html",
+    "title": "8  Salinity",
+    "section": "",
+    "text": "Summarize the info from the Gulf Data Atlas (e.g. the maps that went into the CCMP). Would be great to summarize the USGS salinity data and DMR’s sampling data as well - some seasonal and annual details would be great.",
+    "crumbs": [
+      "Hydrology",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Salinity</span>"
+    ]
+  },
+  {
+    "objectID": "population.html",
+    "href": "population.html",
+    "title": "9  Population",
+    "section": "",
+    "text": "Code here that generated population info from Census data",
+    "crumbs": [
+      "People and Land Use",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
+    ]
+  },
+  {
+    "objectID": "landuse_landcover.html",
+    "href": "landuse_landcover.html",
+    "title": "10  Land Use / Land Cover",
+    "section": "",
+    "text": "Summarize LULC info by MDEQ basin here",
+    "crumbs": [
+      "People and Land Use",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Land Use / Land Cover</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "11  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "geographic_setting.html",
+    "href": "geographic_setting.html",
+    "title": "Geographic Setting",
+    "section": "",
+    "text": "Some info here about different ways of describing where we are and what comprises the watershed: USGS HUCs, DEQ’s division into different basins, and EPA EcoRegions.\nPossibly also the definitions from the CCMP of MS Sound, MS Sound Estuary, and MS Sound Watershed.",
+    "crumbs": [
+      "Geographic Setting"
+    ]
+  },
+  {
+    "objectID": "climatology.html",
+    "href": "climatology.html",
+    "title": "Climatology",
+    "section": "",
+    "text": "Pieces of this part will be things like precipitation, temperature, etc.",
+    "crumbs": [
+      "Climatology"
+    ]
+  },
+  {
+    "objectID": "hydrology.html",
+    "href": "hydrology.html",
+    "title": "Hydrology",
+    "section": "",
+    "text": "Freshwater inflows from the different sources, salinity characteristics, etc.",
+    "crumbs": [
+      "Hydrology"
+    ]
+  },
+  {
+    "objectID": "people_and_land_use.html",
+    "href": "people_and_land_use.html",
+    "title": "People and Land Use",
+    "section": "",
+    "text": "Here’s where population calculations and land use/land cover summaries can be generated.",
+    "crumbs": [
+      "People and Land Use"
+    ]
+  }
+]
