@@ -41,7 +41,7 @@ e.g. how many miles of streams, how many acres of lakes/ponds/etc. in the waters
 #| label: tbl-stream-lengths
 #| tbl-cap: "Length (mi) of stream types in the MSEP watershed"
 
-flowlines <- st_read(flowline_in)
+flowlines <- st_read(flowline_in, quiet = TRUE)
 
 stream_lengths <- flowlines |> 
     mutate(length = st_length(geom),
@@ -68,7 +68,7 @@ knitr::kable(stream_lengths_by_description,
 #| label: tbl-waterbody-areas
 #| tbl-cap: "Total area (acres) of water body types in the MSEP watershed"
 
-waterbodies <- st_read(waterbody_in)
+waterbodies <- st_read(waterbody_in, quiet = TRUE)
 
 areas <- waterbodies |> 
     mutate(area = st_area(geom),
