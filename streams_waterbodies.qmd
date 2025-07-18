@@ -8,7 +8,23 @@ library(units)
 library(tigris)
 options(tigris_use_cache = TRUE)
 library(foreign)
+library(tmap)
+
+if (knitr::is_html_output()) {
+  tmap::tmap_mode("view")
+} else {
+  tmap::tmap_mode("plot")
+}
+
 ```
+
+
+
+## Amount of water  
+
+e.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed 
+
+**TO-DO: Calculate this by basin (MDEQ definitions, not HUCs)**  
 
 ```{r}
 flowline_in <- here::here("data",
@@ -27,14 +43,6 @@ db_codes <- read.dbf(here::here("data",
     select(FCode, Descriptio)
 ```
 
-
-
-## Amount of water  
-
-e.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed 
-
-**TO-DO: Calculate this by basin (MDEQ definitions, not HUCs)**  
-
 ### Stream Lengths  
 
 ```{r}
@@ -50,6 +58,7 @@ stream_lengths <- flowlines |>
     left_join(db_codes, by = c("FCODE" = "FCode"))
 
 stream_lengths_by_description <- stream_lengths |> 
+    mutate(Descriptio = str_remove(Descriptio, "Hydrographic Category = ")) |> 
     summarize(.by = Descriptio,
               total_miles = sum(length_mi, na.rm = TRUE)) |> 
     rename(Type = Descriptio) |> 
@@ -77,6 +86,7 @@ areas <- waterbodies |>
     left_join(db_codes, by = c("fcode" = "FCode"))
 
 areas_by_description <- areas |> 
+    mutate(Descriptio = str_remove_all(Descriptio, "Hydrographic Category = |Reservoir Type = |Stage = ")) |> 
     summarize(.by = Descriptio,
               total_acres = sum(area_acres, na.rm = TRUE)) |> 
     rename(Type = Descriptio) |> 
@@ -87,17 +97,165 @@ knitr::kable(areas_by_description,
              format.args = list(big.mark = ","))
 ```
 
+```{r}
+# cleanup
+rm(flowlines, stream_lengths,
+   areas, areas_by_description,
+   db_codes, stream_lengths_by_description,
+   waterbodies)
+```
+
+
 ## Designated Uses  
 
-from DEQ, what's designated for shellfishing vs. drinking water vs. fish and wildlife (etc.)  
+The Mississippi Department of Environmental Quality (MDEQ) is responsible for classifying surface waters in Mississippi into 'designating uses' (e.g. fish and wildlife, recreation, shellfish harvesting, public water supply) and creating water quality standards to ensure designated uses can be met. More detail on designated uses and water quality standards can be found on [MDEQ's website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/).
+
+A 305(b) report (the most recent as of this writing is from 2024; [pdf available here](https://www.mdeq.ms.gov/wp-content/uploads/2024/09/2024_305b_final.pdf)) is generated every other year, and quantifies how many and which water bodies are / are not meeting the criteria for their designated use.  
+
+Here, we are only summarizing designated uses within the Mississippi Sound Watershed - not assessment of whether criteria are met. See the 305(b) report linked above for more detailed information.  
+
+**The tables below do not include the general 'Fish and Wildlife' designation; that designation applies to most waters of the state.**  
+
+```{r}
+des.use_in <- here::here("data",
+                         "DEQ_designated_uses",
+                         "SelectedWQSWaters")
+
+# dictionary for abbreviations
+abbrevs <- tribble(
+    ~ATTR_VAL, ~Description,
+    "EPH", "Ephemeral",
+    "PWS", "Public Water Supply",
+    "REC", "Recreation",
+    "SHF", "Shellfish Harvesting",
+    "PWS-REC", "Public Water Supply & Recreation",
+    "SHF-REC", "Shellfish Harvesting & Recreation",
+    "SFH-REC", "Shellfish Harvesting & Recreation",
+    "FW1", "Fish and Wildlife"
+)
+```
+
+```{r}
+streams <- st_read(here::here(des.use_in, "SelectedWQSLinearWaters.shp"),
+                   quiet = TRUE)
+stream_lengths <- streams |> 
+    mutate(length = st_length(geometry),
+           length_mi = set_units(length, "mi"),
+           length_mi = as.numeric(length_mi)) |> 
+    st_drop_geometry()
+stream_length_summ <- stream_lengths |> 
+    mutate(ATTR_VAL = case_when(ATTR_VAL == "SFH-REC" ~ "SHF-REC",
+                                .default = ATTR_VAL)) |> 
+    left_join(abbrevs) |> 
+    summarize(.by = c(ATTR_VAL, Description),
+              length_mi = sum(length_mi)) |> 
+    arrange(desc(length_mi)) |> 
+    rename(Code = ATTR_VAL,
+           Miles = length_mi)
+```
+
+```{r}
+#| label: tab-desigUse-lengths
+#| tbl-cap: "Miles of streams with each designated use in the MS Sound Watershed"
+
+knitr::kable(stream_length_summ,
+             digits = 1,
+             format.args = list(big.mark = ","))
+
+```
+
+```{r}
+polys <- st_read(here::here(des.use_in, "SelectedWQSPolygonalWaters.shp"),
+                 quiet = TRUE)
+wb_areas <- polys |> 
+    mutate(area = st_area(geometry),
+           area_sqmi = set_units(area, "mi2"),
+           area_acres = set_units(area, "acres"),
+           across(c(area_sqmi, area_acres), as.numeric)) |> 
+    st_drop_geometry()
+
+wb_area_summ <- wb_areas |> 
+    left_join(abbrevs) |> 
+    summarize(.by = c(ATTR_VAL, Description),
+              area_sqmi = sum(area_sqmi, na.rm = TRUE),
+              area_acres = sum(area_acres, na.rm = TRUE)) |> 
+    arrange(desc(area_acres)) |> 
+    rename(Code = ATTR_VAL,
+           "Square Miles" = area_sqmi,
+           "Acres" = area_acres)
+```
+
+```{r}
+#| label: tab-desigUse-areas
+#| tbl-cap: "Area of non-linear waterbodies with each designated use in the MS Sound Watershed"
+
+knitr::kable(wb_area_summ,
+             digits = 1,
+             format.args = list(big.mark = ","))
+```
+
+```{r}
+#| label: fig-desigUse-map
+#| fig-cap: "Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ."
+
+col_labs <- sort(unique(c(unique(stream_length_summ$Description), unique(wb_area_summ$Description))))
+col_pal <- khroma::color("muted")(length(col_labs))
+col_pal <- as.character(col_pal)
+names(col_pal) <- col_labs
+
+ms_sf <- states(cb = TRUE) |> 
+    filter(NAME == "Mississippi")
+streams <- streams |> 
+    left_join(abbrevs) |> 
+    st_transform(crs = st_crs(ms_sf))
+polys <- polys |> 
+    left_join(abbrevs) |> 
+    st_transform(crs = st_crs(ms_sf))
+msep_boundary <- outline_full |> 
+    st_transform(crs = st_crs(ms_sf))
+
+tm_shape(ms_sf) +
+    tm_lines(col = "gray20") +
+    tm_shape(msep_boundary) +
+    tm_lines(col = "navy") +
+    tm_shape(streams) +
+    tm_lines(col = "Description",
+             col.scale = tm_scale(values = col_pal)) +
+    tm_shape(polys) +
+    tm_polygons(fill = "Description",
+                fill.scale = tm_scale(values = col_pal)) +
+    tm_title("Waterbody Use Designations in \nthe Mississippi Sound Watershed") +
+    tm_layout(frame = FALSE)
+
+```
+
+
+```{r}
+# cleanup
+rm(stream_length_summ, stream_lengths, streams,
+   polys, wb_areas, wb_area_summ)
+```
+
 
 ## Impairments  
 
-TMDLs! How many, where are they, what are the TMDLs for.  
+303d, TMDLs - How many, where are they, what are the TMDLs for. What problems are we dealing with in the watershed.   
 
 
 ## Data Sources  
 
 **The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**.  
 
-Stream Lengths and Waterbody Areas were calculated from the [EPA's NHDPlus](https://www.epa.gov/waterdata/nhdplus-national-hydrography-dataset-plus) dataset. 
+#### Stream Lengths and Waterbody Areas  
+
+Stream Lengths and Waterbody Areas were calculated from the [EPA's NHDPlus](https://www.epa.gov/waterdata/nhdplus-national-hydrography-dataset-plus) dataset. Files for the [South Atlantic (03f)](https://www.epa.gov/waterdata/nhdplus-south-atlantic-west-data-vector-processing-unit-03w) and [Lower Mississippi River (03g)](https://www.epa.gov/waterdata/nhdplus-lower-mississippi-data-vector-processing-unit-08) regions were downloaded on 12 June 2025. The original downloaded files are available in the [EPA NHDPlus](https://drive.google.com/drive/folders/1QIMCH0Ae41V2k9ndVEZl-WMy8zcbbF1w?usp=sharing) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+Those files were read in, combined, and clipped to only the Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `EPANHD_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/preprocessing_scripts/EPANHD_subsetting.R)) in the `R_preprocessing` folder. The resulting files were saved as geopackages  `EPA_NHDplus_flowline_MSEP.gpkg` and `EPA_NHDplus_waterbody_MSEP.gpkg` in the `data/processed` folder. These files are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+#### Designated Uses  
+
+Shapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ's Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, "all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife." See [their website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/basins-andstreams/) for more information.  
+
+The zipped shapefiles are available in **to fill in**.  
+
+#### Impairments  
