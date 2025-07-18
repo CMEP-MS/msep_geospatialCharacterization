@@ -195,15 +195,12 @@ knitr::kable(wb_area_summ,
 ```
 
 ```{r}
-#| label: fig-desigUse-map
-#| fig-cap: "Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ."
-
 col_labs <- sort(unique(c(unique(stream_length_summ$Description), unique(wb_area_summ$Description))))
 col_pal <- khroma::color("muted")(length(col_labs))
 col_pal <- as.character(col_pal)
 names(col_pal) <- col_labs
 
-ms_sf <- states(cb = TRUE) |> 
+ms_sf <- states(cb = TRUE, progress_bar = FALSE) |> 
     filter(NAME == "Mississippi")
 streams <- streams |> 
     left_join(abbrevs) |> 
@@ -213,6 +210,12 @@ polys <- polys |>
     st_transform(crs = st_crs(ms_sf))
 msep_boundary <- outline_full |> 
     st_transform(crs = st_crs(ms_sf))
+```
+
+
+```{r}
+#| label: fig-desigUse-map
+#| fig-cap: "Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ."
 
 tm_shape(ms_sf) +
     tm_lines(col = "gray20") +
@@ -224,10 +227,11 @@ tm_shape(ms_sf) +
     tm_shape(polys) +
     tm_polygons(fill = "Description",
                 fill.scale = tm_scale(values = col_pal)) +
-    tm_title("Waterbody Use Designations in \nthe Mississippi Sound Watershed") +
     tm_layout(frame = FALSE)
 
 ```
+
+
 
 
 ```{r}
