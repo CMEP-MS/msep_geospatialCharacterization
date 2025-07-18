@@ -4,3 +4,103 @@ For some geological classification that isn't based on watershed boundaries, we 
 
 
 Intent here is to list which ecoregions are in our watershed, and which are in each basin (using MDEQ's divisions). And maybe how much are of each basin belongs to each ecoregion. Plus show a map.  
+
+```{r}
+library(tidyverse)
+library(sf)
+library(tmap)
+library(msepBoundaries)
+
+# render the maps interactively or statically
+out_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+if (out_format == "html") {
+  message("Setting tmap mode to 'view'")
+  tmap_mode("view")
+} else {
+  message("Setting tmap mode to 'plot'")
+  tmap_mode("plot")
+}
+
+```
+
+```{r}
+
+fl <- here::here("data", "processed",
+                 "EPA_EcoRegion.gpkg")
+
+all3 <- st_read(fl, layer = "level3_lamsal", quiet = TRUE)
+msep3 <- st_read(fl, layer = "level3_mssoundwatershed", quiet = TRUE)
+msep4 <- st_read(fl, layer = "level4_mssoundwatershed", quiet = TRUE)
+
+msep_boundary <- outline_full |> 
+    st_transform(crs = st_crs(all3))
+```
+
+
+### Level 3 Ecoregions  
+
+```{r}
+#| label: fig-l3ecoall
+#| fig-cap: "Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black."
+
+tm_shape(all3) +
+    tm_basemap("CartoDB.Positron") +
+    tm_polygons(fill = "L3_KEY",
+             fill_alpha = 0.8,
+             fill.scale = tm_scale(values = "viridis")) +
+    tm_shape(msep_boundary) +
+    tm_lines(col = "black",
+             lwd = 3)
+```
+
+The Mississippi Sound Watershed contains 4 level-3 ecoregions:  
+
+-  65 Southeastern Plains  
+-  73 Mississippi Alluvial Plain  (in the very southwest corner)  
+-  74 Mississippi Valley Loess Plains  
+-  75 Southern Coastal Plain  
+
+```{r}
+#| label: fig-l3ecomssnd
+#| fig-cap: "Level 3 Ecoregions in the Mississippi Sound Watershed only."
+
+tm_shape(msep3) +
+    tm_basemap("CartoDB.Positron") +
+    tm_polygons(fill = "L3_KEY",
+             fill_alpha = 0.8,
+             fill.scale = tm_scale(values = "viridis")) +
+    tm_shape(msep_boundary) +
+    tm_lines(col = "black")
+```
+
+
+### Level 4 Ecoregions  
+
+```{r}
+#| label: fig-l4ecomssnd
+#| fig-cap: "Level 4 Ecoregions in the Mississippi Sound Watershed."
+
+tm_shape(msep4) +
+    tm_basemap("CartoDB.Positron") +
+    tm_polygons(fill = "L4_KEY",
+             fill_alpha = 0.8,
+             fill.scale = tm_scale(values = "viridis")) +
+    tm_shape(msep_boundary) +
+    tm_lines(col = "black")
+```
+
+
+## Data Sources  
+
+**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**.  
+
+#### Ecoregions  
+
+Level 3 and 4 Ecoregion shapefiles were downloaded from the [EPA's website](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-state) on 16 June 2025 for the states of MS, AL, and LA.   
+
+The original downloaded files along with their metadata files are available in the [EPA EcoRegions](https://drive.google.com/drive/folders/1Q8fZpHI-R40OW7dmQBE0e-VsQ0uSC7R1?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+Those files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `EPAEcoRegion_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/EPAEcoRegion_subsetting.R)) in the `R_preprocessing` folder. Three objects resulted: `level3_lamsal`, level 3 ecoregions for the 3 states combined; `level3_mssoundwatershed`, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and `level4_mssoundwatershed`, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.  
+
+The resulting objects were saved as layers of a geopackage,   `EPA_EcoRegion.gpkg` in the `data/processed` folder. These files are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  

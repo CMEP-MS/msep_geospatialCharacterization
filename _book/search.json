@@ -36,7 +36,18 @@
     "href": "EPA_Ecoregions.html",
     "title": "3  EPA Ecoregions",
     "section": "",
-    "text": "For some geological classification that isn’t based on watershed boundaries, we turn to the EPA’s Ecoregions.\nIntent here is to list which ecoregions are in our watershed, and which are in each basin (using MDEQ’s divisions). And maybe how much are of each basin belongs to each ecoregion. Plus show a map.",
+    "text": "3.0.1 Level 3 Ecoregions\nFigure 3.1: Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black.\nThe Mississippi Sound Watershed contains 4 level-3 ecoregions:\nFigure 3.2: Level 3 Ecoregions in the Mississippi Sound Watershed only.",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+    ]
+  },
+  {
+    "objectID": "EPA_Ecoregions.html#data-sources",
+    "href": "EPA_Ecoregions.html#data-sources",
+    "title": "3  EPA Ecoregions",
+    "section": "3.1 Data Sources",
+    "text": "3.1 Data Sources\nThe .qmd file that generated this section was: EPA_Ecoregions.qmd.\n\n3.1.0.1 Ecoregions\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
     "crumbs": [
       "Geographic Setting",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"

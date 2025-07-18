@@ -263,7 +263,7 @@ Those files were read in, combined, and clipped to only the Mississippi Sound Wa
 
 #### Designated Uses  
 
-Shapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ's Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, "all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife." See [their website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/basins-andstreams/) for more information.  
+Shapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ's Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, "all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife." See [their website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/basins-and-streams/) for more information.  
 
 The zipped shapefiles are available in **to fill in**.  
 
