@@ -10,10 +10,15 @@ options(tigris_use_cache = TRUE)
 library(foreign)
 library(tmap)
 
-if (knitr::is_html_output()) {
-  tmap::tmap_mode("view")
+# render the maps interactively or statically
+out_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+if (out_format == "html") {
+  message("Setting tmap mode to 'view'")
+  tmap_mode("view")
 } else {
-  tmap::tmap_mode("plot")
+  message("Setting tmap mode to 'plot'")
+  tmap_mode("plot")
 }
 
 ```
