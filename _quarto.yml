@@ -46,6 +46,7 @@ book:
 format:
   html:
     theme: cosmo
+    css: custom.css
   pdf:
     documentclass: scrreprt
     fig-pos: "H"

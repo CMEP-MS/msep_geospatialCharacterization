@@ -1,0 +1,12 @@
+/* Make all child divs in the legend left-aligned */
+.info.legend > div {
+  text-align: left !important;
+}
+
+/* Align text next to legend icons */
+.info.legend span {
+  display: inline-block;
+  text-align: left !important;
+  margin-left: 6px;
+  vertical-align: middle;
+}
