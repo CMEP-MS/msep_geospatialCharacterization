@@ -231,8 +231,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#entire-watershed" id="toc-entire-watershed" class="nav-link active" data-scroll-target="#entire-watershed"><span class="header-section-number">9.1</span> Entire watershed</a></li>
+  <li><a href="#watershed-in-the-state-of-ms" id="toc-watershed-in-the-state-of-ms" class="nav-link" data-scroll-target="#watershed-in-the-state-of-ms"><span class="header-section-number">9.2</span> Watershed in the state of MS</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">9.3</span> Data Sources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/population.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -256,9 +264,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Code here that generated population info from Census data</p>
+<p>The values calculated below are based on 2020 US Census data. The population estimate for the entire state of Mississippi was ~2.96 million in 2020.</p>
+<section id="entire-watershed" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="entire-watershed"><span class="header-section-number">9.1</span> Entire watershed</h2>
+<p>This estimate includes the portions of the watershed in Louisiana and Alabama:</p>
+<div class="summary-numberA">
+<p><strong>1,718,504</strong></p>
+</div>
+</section>
+<section id="watershed-in-the-state-of-ms" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="watershed-in-the-state-of-ms"><span class="header-section-number">9.2</span> Watershed in the state of MS</h2>
+<p>This estimate includes the state of Mississippi only:</p>
+<div class="summary-numberA">
+<p><strong>1,539,090</strong></p>
+</div>
+</section>
+<section id="data-sources" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">9.3</span> Data Sources</h2>
+<p><strong>The <code>.qmd</code> file</strong> that generated this section was: <strong>population.qmd</strong>.</p>
+<section id="dasymetric-population-estimates" class="level4" data-number="9.3.0.1">
+<h4 data-number="9.3.0.1" class="anchored" data-anchor-id="dasymetric-population-estimates"><span class="header-section-number">9.3.0.1</span> Dasymetric Population Estimates</h4>
+<p>The <a href="https://www.epa.gov/enviroatlas/data-download">EPA EnviroAtlas’s</a> dasymetric population datasets “intelligently reallocate … population from census blocks to 30 meter pixels based on land cover and slope”. The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.</p>
+<p>The original downloaded file (zipped; ~3.6 GB) is available in the <a href="https://drive.google.com/drive/folders/1EBiRPhoXG1JNPFQDTasVWiJJI2LV6B-Y?usp=drive_link">Population</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
+<p>The dataset was trimmed to Mississippi Sound Watershed boundaries (using the <code>outline_full</code> object from the <a href="https://github.com/CMEP-MS/msepBoundaries"><code>{msepBoundaries}</code> package</a>) using the script <code>Population_2020_subsetting.R</code> (<a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Population_2020_subsetting.R">on github</a>) in the <code>R_preprocessing</code> folder.</p>
+<p>The resulting file, <code>Population_Dasymetric_2020.tif</code>, is available in the <a href="https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link">processed</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -698,4 +731,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/population.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/population.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>

@@ -1,5 +1,5 @@
 # Preface {.unnumbered}
 
-This website is a collection of documents characterizing the Mississippi Sound Watershed, primarily through use of geospatial data. The outputs are compiled as a 'quarto book'. Each chapter is produced by a separate .qmd file.    
+This website is a collection of documents characterizing the Mississippi Sound Watershed, primarily through use of geospatial data. The outputs are compiled as a ['quarto book'](https://quarto.org/docs/books/). Each chapter is produced by a separate `.qmd` file.    
 
 The purpose of the book format is to make the outputs readily findable and accessible. It may also serve as an outline for future undertakings like the State of the Sound report.  

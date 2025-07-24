@@ -157,7 +157,40 @@
     "href": "population.html",
     "title": "9  Population",
     "section": "",
-    "text": "Code here that generated population info from Census data",
+    "text": "9.1 Entire watershed\nThis estimate includes the portions of the watershed in Louisiana and Alabama:",
+    "crumbs": [
+      "People and Land Use",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
+    ]
+  },
+  {
+    "objectID": "population.html#entire-watershed",
+    "href": "population.html#entire-watershed",
+    "title": "9  Population",
+    "section": "",
+    "text": "1,718,504",
+    "crumbs": [
+      "People and Land Use",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
+    ]
+  },
+  {
+    "objectID": "population.html#watershed-in-the-state-of-ms",
+    "href": "population.html#watershed-in-the-state-of-ms",
+    "title": "9  Population",
+    "section": "9.2 Watershed in the state of MS",
+    "text": "9.2 Watershed in the state of MS\nThis estimate includes the state of Mississippi only:\n\n1,539,090",
+    "crumbs": [
+      "People and Land Use",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
+    ]
+  },
+  {
+    "objectID": "population.html#data-sources",
+    "href": "population.html#data-sources",
+    "title": "9  Population",
+    "section": "9.3 Data Sources",
+    "text": "9.3 Data Sources\nThe .qmd file that generated this section was: population.qmd.\n\n9.3.0.1 Dasymetric Population Estimates\nThe EPA EnviroAtlas’s dasymetric population datasets “intelligently reallocate … population from census blocks to 30 meter pixels based on land cover and slope”. The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.\nThe original downloaded file (zipped; ~3.6 GB) is available in the Population folder of the msepCharacterization data files directory.\nThe dataset was trimmed to Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script Population_2020_subsetting.R (on github) in the R_preprocessing folder.\nThe resulting file, Population_Dasymetric_2020.tif, is available in the processed folder of the msepCharacterization data files directory.",
     "crumbs": [
       "People and Land Use",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
