@@ -18,7 +18,7 @@ book:
   repo-url: https://github.com/CMEP-MS/msep_geospatialCharacterization
   repo-actions: [source]
   repo-link-target: "_blank"
-  downloads: [pdf, docx]
+  downloads: [pdf]
   cover-image: MSEP-logo.png
   cover-image-alt: "MSEP logo"
   navbar:
@@ -61,8 +61,7 @@ format:
     documentclass: scrreprt
     fig-pos: "H"
     tbl-pos: "H"
-  docx:
-    df-print: kable
+
 
 crossref:
   appendix-title: "Appendix"
