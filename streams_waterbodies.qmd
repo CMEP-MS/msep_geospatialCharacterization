@@ -113,7 +113,7 @@ rm(flowlines, stream_lengths,
 
 ## Designated Uses  
 
-The Mississippi Department of Environmental Quality (MDEQ) is responsible for classifying surface waters in Mississippi into 'designating uses' (e.g. fish and wildlife, recreation, shellfish harvesting, public water supply) and creating water quality standards to ensure designated uses can be met. More detail on designated uses and water quality standards can be found on [MDEQ's website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/).
+The Mississippi Department of Environmental Quality (MDEQ), per the federal Clean Water Act of 1972, is responsible for classifying surface waters in Mississippi into 'designated uses' (e.g. fish and wildlife, recreation, shellfish harvesting, public water supply) and creating water quality standards to ensure designated uses can be met. More detail on designated uses and water quality standards can be found on [MDEQ's website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/).
 
 A 305(b) report (the most recent as of this writing is from 2024; [pdf available here](https://www.mdeq.ms.gov/wp-content/uploads/2024/09/2024_305b_final.pdf)) is generated every other year, and quantifies how many and which water bodies are / are not meeting the criteria for their designated use.  
 
@@ -223,15 +223,24 @@ msep_boundary <- outline_full |>
 #| fig-cap: "Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ."
 
 tm_shape(ms_sf) +
+    tm_basemap("CartoDB.Positron") +
     tm_lines(col = "gray20") +
     tm_shape(msep_boundary) +
     tm_lines(col = "navy") +
     tm_shape(streams) +
     tm_lines(col = "Description",
-             col.scale = tm_scale(values = col_pal)) +
+             col.scale = tm_scale(values = col_pal),
+             col.legend = tm_legend(
+                 title = "Stream/River designated uses"
+             )
+    )+
     tm_shape(polys) +
     tm_polygons(fill = "Description",
-                fill.scale = tm_scale(values = col_pal)) +
+                fill.scale = tm_scale(values = col_pal),
+                fill.legend = tm_legend(
+                    title = "Water Body designated uses"
+                )
+    ) +
     tm_layout(frame = FALSE)
 
 ```

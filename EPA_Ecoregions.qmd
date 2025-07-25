@@ -38,7 +38,7 @@ msep_boundary <- outline_full |>
 ```
 
 
-### Level 3 Ecoregions  
+## Level 3 Ecoregions  
 
 ```{r}
 #| label: fig-l3ecoall
@@ -48,7 +48,10 @@ tm_shape(all3) +
     tm_basemap("CartoDB.Positron") +
     tm_polygons(fill = "L3_KEY",
              fill_alpha = 0.8,
-             fill.scale = tm_scale(values = "viridis")) +
+             fill.scale = tm_scale(values = "viridis"),
+             fill.legend = tm_legend(
+                 title = "Level 3 Ecoregion Code"
+             )) +
     tm_shape(msep_boundary) +
     tm_lines(col = "black",
              lwd = 3)
@@ -69,13 +72,16 @@ tm_shape(msep3) +
     tm_basemap("CartoDB.Positron") +
     tm_polygons(fill = "L3_KEY",
              fill_alpha = 0.8,
-             fill.scale = tm_scale(values = "viridis")) +
+             fill.scale = tm_scale(values = "viridis"),
+             fill.legend = tm_legend(
+                 title = "Level 3 Ecoregion Code"
+             )) +
     tm_shape(msep_boundary) +
     tm_lines(col = "black")
 ```
 
 
-### Level 4 Ecoregions  
+## Level 4 Ecoregions  
 
 ```{r}
 #| label: fig-l4ecomssnd
@@ -85,9 +91,12 @@ tm_shape(msep4) +
     tm_basemap("CartoDB.Positron") +
     tm_polygons(fill = "L4_KEY",
              fill_alpha = 0.8,
-             fill.scale = tm_scale(values = "viridis")) +
+             fill.scale = tm_scale(values = "viridis"),
+             fill.legend = tm_legend(
+                 title = "Level 4 Ecoregion Code"
+             )) +
     tm_shape(msep_boundary) +
-    tm_lines(col = "black")
+    tm_lines(col = "black") 
 ```
 
 

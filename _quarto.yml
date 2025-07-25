@@ -9,7 +9,7 @@ execute:
   freeze: auto
   cache: false
   enabled: true
-
+  
 book:
   title: "Characteristics of the Mississippi Sound Estuary and Watershed"
   author: "Mississippi Sound Estuary Program"
@@ -18,26 +18,36 @@ book:
   repo-url: https://github.com/CMEP-MS/msep_geospatialCharacterization
   repo-actions: [source]
   repo-link-target: "_blank"
+  downloads: [pdf, docx]
+  cover-image: MSEP-logo.png
+  cover-image-alt: "MSEP logo"
+  navbar:
+    logo: MSEP-logo2.png
   chapters:
     - index.qmd
+    
     - part: geographic_setting.qmd
       chapters: 
         - HUCs.qmd
         - MDEQ_Basins.qmd
         - EPA_Ecoregions.qmd
+    
     - part: climatology.qmd
       chapters: 
         - precipitation.qmd
         - temperature.qmd  
+    
     - part: hydrology.qmd
       chapters: 
         - streams_waterbodies.qmd
         - freshwater_inflows.qmd
         - salinity.qmd
+    
     - part: people_and_land_use.qmd
       chapters:
         - population.qmd
         - landuse_landcover.qmd
+    
     - summary.qmd
     # - references.qmd
 
@@ -51,6 +61,10 @@ format:
     documentclass: scrreprt
     fig-pos: "H"
     tbl-pos: "H"
+  docx:
+    df-print: kable
 
-
+crossref:
+  appendix-title: "Appendix"
+  appendix-delim: ":"
 

@@ -36,7 +36,29 @@
     "href": "EPA_Ecoregions.html",
     "title": "3  EPA Ecoregions",
     "section": "",
-    "text": "3.0.1 Level 3 Ecoregions\nFigure 3.1: Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black.\nThe Mississippi Sound Watershed contains 4 level-3 ecoregions:\nFigure 3.2: Level 3 Ecoregions in the Mississippi Sound Watershed only.",
+    "text": "3.1 Level 3 Ecoregions\nFigure 3.1: Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black.\nThe Mississippi Sound Watershed contains 4 level-3 ecoregions:\nFigure 3.2: Level 3 Ecoregions in the Mississippi Sound Watershed only.",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+    ]
+  },
+  {
+    "objectID": "EPA_Ecoregions.html#level-3-ecoregions",
+    "href": "EPA_Ecoregions.html#level-3-ecoregions",
+    "title": "3  EPA Ecoregions",
+    "section": "",
+    "text": "65 Southeastern Plains\n\n73 Mississippi Alluvial Plain (in the very southwest corner)\n\n74 Mississippi Valley Loess Plains\n\n75 Southern Coastal Plain",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+    ]
+  },
+  {
+    "objectID": "EPA_Ecoregions.html#level-4-ecoregions",
+    "href": "EPA_Ecoregions.html#level-4-ecoregions",
+    "title": "3  EPA Ecoregions",
+    "section": "3.2 Level 4 Ecoregions",
+    "text": "3.2 Level 4 Ecoregions\n\n\n\n\n\n\n\n\n\nFigure 3.3: Level 4 Ecoregions in the Mississippi Sound Watershed.",
     "crumbs": [
       "Geographic Setting",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
@@ -46,8 +68,8 @@
     "objectID": "EPA_Ecoregions.html#data-sources",
     "href": "EPA_Ecoregions.html#data-sources",
     "title": "3  EPA Ecoregions",
-    "section": "3.1 Data Sources",
-    "text": "3.1 Data Sources\nThe .qmd file that generated this section was: EPA_Ecoregions.qmd.\n\n3.1.0.1 Ecoregions\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
+    "section": "3.3 Data Sources",
+    "text": "3.3 Data Sources\nThe .qmd file that generated this section was: EPA_Ecoregions.qmd.\n\n3.3.0.1 Ecoregions\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
     "crumbs": [
       "Geographic Setting",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
@@ -102,7 +124,7 @@
     "href": "streams_waterbodies.html#designated-uses",
     "title": "6  Streams and Waterbodies",
     "section": "6.2 Designated Uses",
-    "text": "6.2 Designated Uses\nThe Mississippi Department of Environmental Quality (MDEQ) is responsible for classifying surface waters in Mississippi into ‘designating uses’ (e.g. fish and wildlife, recreation, shellfish harvesting, public water supply) and creating water quality standards to ensure designated uses can be met. More detail on designated uses and water quality standards can be found on MDEQ’s website.\nA 305(b) report (the most recent as of this writing is from 2024; pdf available here) is generated every other year, and quantifies how many and which water bodies are / are not meeting the criteria for their designated use.\nHere, we are only summarizing designated uses within the Mississippi Sound Watershed - not assessment of whether criteria are met. See the 305(b) report linked above for more detailed information.\nThe tables below do not include the general ‘Fish and Wildlife’ designation; that designation applies to most waters of the state.\n\n\n\nMiles of streams with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nMiles\n\n\n\n\nREC\nRecreation\n1,011.6\n\n\nPWS\nPublic Water Supply\n26.3\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n25.3\n\n\nFW1\nFish and Wildlife\n10.4\n\n\nEPH\nEphemeral\n1.8\n\n\n\n\n\n\n\n\nArea of non-linear waterbodies with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nSquare Miles\nAcres\n\n\n\n\nREC\nRecreation\n742.2\n475,019.3\n\n\nPWS\nPublic Water Supply\n34.8\n22,259.2\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n22.0\n14,100.5\n\n\nPWS-REC\nPublic Water Supply & Recreation\n0.2\n119.8\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6.1: Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ.",
+    "text": "6.2 Designated Uses\nThe Mississippi Department of Environmental Quality (MDEQ), per the federal Clean Water Act of 1972, is responsible for classifying surface waters in Mississippi into ‘designated uses’ (e.g. fish and wildlife, recreation, shellfish harvesting, public water supply) and creating water quality standards to ensure designated uses can be met. More detail on designated uses and water quality standards can be found on MDEQ’s website.\nA 305(b) report (the most recent as of this writing is from 2024; pdf available here) is generated every other year, and quantifies how many and which water bodies are / are not meeting the criteria for their designated use.\nHere, we are only summarizing designated uses within the Mississippi Sound Watershed - not assessment of whether criteria are met. See the 305(b) report linked above for more detailed information.\nThe tables below do not include the general ‘Fish and Wildlife’ designation; that designation applies to most waters of the state.\n\n\n\nMiles of streams with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nMiles\n\n\n\n\nREC\nRecreation\n1,011.6\n\n\nPWS\nPublic Water Supply\n26.3\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n25.3\n\n\nFW1\nFish and Wildlife\n10.4\n\n\nEPH\nEphemeral\n1.8\n\n\n\n\n\n\n\n\nArea of non-linear waterbodies with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nSquare Miles\nAcres\n\n\n\n\nREC\nRecreation\n742.2\n475,019.3\n\n\nPWS\nPublic Water Supply\n34.8\n22,259.2\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n22.0\n14,100.5\n\n\nPWS-REC\nPublic Water Supply & Recreation\n0.2\n119.8\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6.1: Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ.",
     "crumbs": [
       "Hydrology",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
