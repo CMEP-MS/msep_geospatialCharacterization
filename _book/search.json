@@ -10,212 +10,223 @@
     ]
   },
   {
-    "objectID": "HUCs.html",
-    "href": "HUCs.html",
-    "title": "1  HUCs",
+    "objectID": "watersheds.html",
+    "href": "watersheds.html",
+    "title": "1  Watersheds",
     "section": "",
-    "text": "Nice explanation of HUCs this USGS page.\nThe HUCs that make up the Mississippi Sound Watershed are 0317 (Pascagoula) and 0318 (Pearl).\nShow some mappy breakdowns.",
+    "text": "1.1 HUCs\nNice explanation of HUCs on this USGS page.\nThe HUCs that make up the Mississippi Sound Watershed are 0317 (Pascagoula) and 0318 (Pearl).\nShow some mappy breakdowns.",
     "crumbs": [
       "Geographic Setting",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>HUCs</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Watersheds</span>"
     ]
   },
   {
-    "objectID": "MDEQ_Basins.html",
-    "href": "MDEQ_Basins.html",
-    "title": "2  MDEQ Basins",
-    "section": "",
-    "text": "There are several waterways that don’t actually end up in either the Pearl or Pascagoula Rivers. So the Mississippi Department of Environmental Quality uses a slightly different division.\nNEED TO CONFIRM, but I think: HUC12s are the same between MDEQ’s classification and the USGS HUCs. They’re just grouped differently, and the streams that empty into bays or straight into the Sound are the ‘Coastal Streams Basin’. There is also a ‘Coastal Offshore’ grouping, that is comprised of the Sound itself, the islands, and the 3-mile zone beyond the islands.",
+    "objectID": "watersheds.html#mdeq-basin-boundaries",
+    "href": "watersheds.html#mdeq-basin-boundaries",
+    "title": "1  Watersheds",
+    "section": "1.2 MDEQ Basin Boundaries",
+    "text": "1.2 MDEQ Basin Boundaries\nThere are several waterways that don’t actually end up in either the Pearl or Pascagoula Rivers. So the Mississippi Department of Environmental Quality uses a slightly different division.\nNEED TO CONFIRM, but I think: HUC12s are the same between MDEQ’s classification and the USGS HUCs. They’re just grouped differently, and the streams that empty into bays or straight into the Sound are the ‘Coastal Streams Basin’. There is also a ‘Coastal Offshore’ grouping, that is comprised of the Sound itself, the islands, and the 3-mile zone beyond the islands.",
     "crumbs": [
       "Geographic Setting",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>MDEQ Basins</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Watersheds</span>"
+    ]
+  },
+  {
+    "objectID": "watersheds.html#about",
+    "href": "watersheds.html#about",
+    "title": "1  Watersheds",
+    "section": "About",
+    "text": "About\nThe .qmd file that generated this section was: watersheds.qmd.\nFor information on data processing, see Appendix A.1.1.",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Watersheds</span>"
     ]
   },
   {
     "objectID": "EPA_Ecoregions.html",
     "href": "EPA_Ecoregions.html",
-    "title": "3  EPA Ecoregions",
+    "title": "2  EPA Ecoregions",
     "section": "",
-    "text": "3.1 Level 3 Ecoregions\nFigure 3.1: Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black.\nThe Mississippi Sound Watershed contains 4 level-3 ecoregions:\nFigure 3.2: Level 3 Ecoregions in the Mississippi Sound Watershed only.",
+    "text": "2.1 Level 3 Ecoregions\nFigure 2.1: Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black.\nThe Mississippi Sound Watershed contains 4 level-3 ecoregions:\nFigure 2.2: Level 3 Ecoregions in the Mississippi Sound Watershed only.",
     "crumbs": [
       "Geographic Setting",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EPA Ecoregions</span>"
     ]
   },
   {
     "objectID": "EPA_Ecoregions.html#level-3-ecoregions",
     "href": "EPA_Ecoregions.html#level-3-ecoregions",
-    "title": "3  EPA Ecoregions",
+    "title": "2  EPA Ecoregions",
     "section": "",
     "text": "65 Southeastern Plains\n\n73 Mississippi Alluvial Plain (in the very southwest corner)\n\n74 Mississippi Valley Loess Plains\n\n75 Southern Coastal Plain",
     "crumbs": [
       "Geographic Setting",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EPA Ecoregions</span>"
     ]
   },
   {
     "objectID": "EPA_Ecoregions.html#level-4-ecoregions",
     "href": "EPA_Ecoregions.html#level-4-ecoregions",
-    "title": "3  EPA Ecoregions",
-    "section": "3.2 Level 4 Ecoregions",
-    "text": "3.2 Level 4 Ecoregions\n\n\n\n\n\n\n\n\n\nFigure 3.3: Level 4 Ecoregions in the Mississippi Sound Watershed.\n\n\n\n\n\nAbout\nThe .qmd file that generated this section was: EPA_Ecoregions.qmd.\nFor information on data processing, see Appendix A.1.3.",
+    "title": "2  EPA Ecoregions",
+    "section": "2.2 Level 4 Ecoregions",
+    "text": "2.2 Level 4 Ecoregions\n\n\n\n\n\n\n\n\n\nFigure 2.3: Level 4 Ecoregions in the Mississippi Sound Watershed.",
     "crumbs": [
       "Geographic Setting",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EPA Ecoregions</span>"
+    ]
+  },
+  {
+    "objectID": "EPA_Ecoregions.html#about",
+    "href": "EPA_Ecoregions.html#about",
+    "title": "2  EPA Ecoregions",
+    "section": "About",
+    "text": "About\nThe .qmd file that generated this section was: EPA_Ecoregions.qmd.\nFor information on data processing, see Appendix A.1.2.",
+    "crumbs": [
+      "Geographic Setting",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EPA Ecoregions</span>"
     ]
   },
   {
     "objectID": "precipitation.html",
     "href": "precipitation.html",
-    "title": "4  Precipitation",
+    "title": "3  Precipitation",
     "section": "",
-    "text": "Make the precip maps here.",
+    "text": "About\nThe .qmd file that generated this section was: precipitation.qmd.\nFor information on data processing, see Appendix A.2.1.",
     "crumbs": [
       "Climatology",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Precipitation</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Precipitation</span>"
     ]
   },
   {
     "objectID": "temperature.html",
     "href": "temperature.html",
-    "title": "5  Temperature",
+    "title": "4  Temperature",
     "section": "",
-    "text": "Some descriptions and maps of temperature normals",
+    "text": "About\nThe .qmd file that generated this section was: temperature.qmd.\nFor information on data processing, see Appendix A.2.2.",
     "crumbs": [
       "Climatology",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Temperature</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Temperature</span>"
     ]
   },
   {
     "objectID": "streams_waterbodies.html",
     "href": "streams_waterbodies.html",
-    "title": "6  Streams and Waterbodies",
+    "title": "5  Streams and Waterbodies",
     "section": "",
-    "text": "6.1 Amount of water\ne.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed\nTO-DO: Calculate this by basin (MDEQ definitions, not HUCs)",
+    "text": "5.1 Amount of water\ne.g. how many miles of streams, how many acres of lakes/ponds/etc. in the watershed\nTO-DO: Calculate this by basin (MDEQ definitions, not HUCs)",
     "crumbs": [
       "Hydrology",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
     ]
   },
   {
     "objectID": "streams_waterbodies.html#amount-of-water",
     "href": "streams_waterbodies.html#amount-of-water",
-    "title": "6  Streams and Waterbodies",
+    "title": "5  Streams and Waterbodies",
     "section": "",
-    "text": "6.1.1 Stream Lengths\n\n\n\n\nTable 6.1: Length (mi) of stream types in the MSEP watershed\n\n\n\n\n\n\nType\ntotal_miles\n\n\n\n\nArtificial Path\n1,496.8\n\n\nCanal/Ditch\n145.3\n\n\nCoastline\n308.7\n\n\nConnector\n26.6\n\n\nStream/River\n5.2\n\n\nStream/River: Intermittent\n20,350.3\n\n\nStream/River: Perennial\n11,730.7\n\n\n\n\n\n\n\n\n\n\n6.1.2 Waterbody Areas\n\n\n\n\nTable 6.2: Total area (acres) of water body types in the MSEP watershed\n\n\n\n\n\n\nType\ntotal_acres\n\n\n\n\nLake/Pond: Intermittent\n70.6\n\n\nLake/Pond: Perennial\n67,602.0\n\n\nLake/Pond: Perennial; Average Water Elevation\n27,726.5\n\n\nLake/Pond: Perennial; Normal Pool\n9.5\n\n\nReservoir\n48.2\n\n\nReservoir: Aquaculture\n471.6\n\n\nReservoir; Treatment\n954.8\n\n\nSwamp/Marsh\n251,495.2",
+    "text": "5.1.1 Stream Lengths\n\n\n\n\nTable 5.1: Length (mi) of stream types in the MSEP watershed\n\n\n\n\n\n\nType\ntotal_miles\n\n\n\n\nArtificial Path\n1,496.8\n\n\nCanal/Ditch\n145.3\n\n\nCoastline\n308.7\n\n\nConnector\n26.6\n\n\nStream/River\n5.2\n\n\nStream/River: Intermittent\n20,350.3\n\n\nStream/River: Perennial\n11,730.7\n\n\n\n\n\n\n\n\n\n\n5.1.2 Waterbody Areas\n\n\n\n\nTable 5.2: Total area (acres) of water body types in the MSEP watershed\n\n\n\n\n\n\nType\ntotal_acres\n\n\n\n\nLake/Pond: Intermittent\n70.6\n\n\nLake/Pond: Perennial\n67,602.0\n\n\nLake/Pond: Perennial; Average Water Elevation\n27,726.5\n\n\nLake/Pond: Perennial; Normal Pool\n9.5\n\n\nReservoir\n48.2\n\n\nReservoir: Aquaculture\n471.6\n\n\nReservoir; Treatment\n954.8\n\n\nSwamp/Marsh\n251,495.2",
     "crumbs": [
       "Hydrology",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
     ]
   },
   {
     "objectID": "streams_waterbodies.html#designated-uses",
     "href": "streams_waterbodies.html#designated-uses",
-    "title": "6  Streams and Waterbodies",
-    "section": "6.2 Designated Uses",
-    "text": "6.2 Designated Uses\nThe Mississippi Department of Environmental Quality (MDEQ), per the federal Clean Water Act of 1972, is responsible for classifying surface waters in Mississippi into ‘designated uses’ (e.g. fish and wildlife, recreation, shellfish harvesting, public water supply) and creating water quality standards to ensure designated uses can be met. More detail on designated uses and water quality standards can be found on MDEQ’s website.\nA 305(b) report (the most recent as of this writing is from 2024; pdf available here) is generated every other year, and quantifies how many and which water bodies are / are not meeting the criteria for their designated use.\nHere, we are only summarizing designated uses within the Mississippi Sound Watershed - not assessment of whether criteria are met. See the 305(b) report linked above for more detailed information.\nThe tables below do not include the general ‘Fish and Wildlife’ designation; that designation applies to most waters of the state.\n\n\n\nMiles of streams with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nMiles\n\n\n\n\nREC\nRecreation\n1,011.6\n\n\nPWS\nPublic Water Supply\n26.3\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n25.3\n\n\nFW1\nFish and Wildlife\n10.4\n\n\nEPH\nEphemeral\n1.8\n\n\n\n\n\n\n\n\nArea of non-linear waterbodies with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nSquare Miles\nAcres\n\n\n\n\nREC\nRecreation\n742.2\n475,019.3\n\n\nPWS\nPublic Water Supply\n34.8\n22,259.2\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n22.0\n14,100.5\n\n\nPWS-REC\nPublic Water Supply & Recreation\n0.2\n119.8\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6.1: Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ.",
+    "title": "5  Streams and Waterbodies",
+    "section": "5.2 Designated Uses",
+    "text": "5.2 Designated Uses\nThe Mississippi Department of Environmental Quality (MDEQ), per the federal Clean Water Act of 1972, is responsible for classifying surface waters in Mississippi into ‘designated uses’ (e.g. fish and wildlife, recreation, shellfish harvesting, public water supply) and creating water quality standards to ensure designated uses can be met. More detail on designated uses and water quality standards can be found on MDEQ’s website.\nA 305(b) report (the most recent as of this writing is from 2024; pdf available here) is generated every other year, and quantifies how many and which water bodies are / are not meeting the criteria for their designated use.\nHere, we are only summarizing designated uses within the Mississippi Sound Watershed - not assessment of whether criteria are met. See the 305(b) report linked above for more detailed information.\nThe tables below do not include the general ‘Fish and Wildlife’ designation; that designation applies to most waters of the state.\n\n\n\nMiles of streams with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nMiles\n\n\n\n\nREC\nRecreation\n1,011.6\n\n\nPWS\nPublic Water Supply\n26.3\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n25.3\n\n\nFW1\nFish and Wildlife\n10.4\n\n\nEPH\nEphemeral\n1.8\n\n\n\n\n\n\n\n\nArea of non-linear waterbodies with each designated use in the MS Sound Watershed\n\n\nCode\nDescription\nSquare Miles\nAcres\n\n\n\n\nREC\nRecreation\n742.2\n475,019.3\n\n\nPWS\nPublic Water Supply\n34.8\n22,259.2\n\n\nSHF-REC\nShellfish Harvesting & Recreation\n22.0\n14,100.5\n\n\nPWS-REC\nPublic Water Supply & Recreation\n0.2\n119.8\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5.1: Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ.",
     "crumbs": [
       "Hydrology",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
     ]
   },
   {
     "objectID": "streams_waterbodies.html#impairments",
     "href": "streams_waterbodies.html#impairments",
-    "title": "6  Streams and Waterbodies",
-    "section": "6.3 Impairments",
-    "text": "6.3 Impairments\n303d, TMDLs - How many, where are they, what are the TMDLs for. What problems are we dealing with in the watershed.",
+    "title": "5  Streams and Waterbodies",
+    "section": "5.3 Impairments",
+    "text": "5.3 Impairments\n303d, TMDLs - How many, where are they, what are the TMDLs for. What problems are we dealing with in the watershed.",
     "crumbs": [
       "Hydrology",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
     ]
   },
   {
-    "objectID": "streams_waterbodies.html#data-sources",
-    "href": "streams_waterbodies.html#data-sources",
-    "title": "6  Streams and Waterbodies",
-    "section": "6.4 Data Sources",
-    "text": "6.4 Data Sources\nThe .qmd file that generated this section was: streams_waterbodies.qmd.\n\n6.4.0.1 Stream Lengths and Waterbody Areas\nStream Lengths and Waterbody Areas were calculated from the EPA’s NHDPlus dataset. Files for the South Atlantic (03f) and Lower Mississippi River (03g) regions were downloaded on 12 June 2025. The original downloaded files are available in the EPA NHDPlus folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to only the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPANHD_subsetting.R (on github) in the R_preprocessing folder. The resulting files were saved as geopackages EPA_NHDplus_flowline_MSEP.gpkg and EPA_NHDplus_waterbody_MSEP.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.\n\n\n6.4.0.2 Designated Uses\nShapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ’s Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, “all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife.” See their website for more information.\nThe zipped shapefiles are available in to fill in.\n\n\n6.4.0.3 Impairments",
+    "objectID": "streams_waterbodies.html#about",
+    "href": "streams_waterbodies.html#about",
+    "title": "5  Streams and Waterbodies",
+    "section": "About",
+    "text": "About\nThe .qmd file that generated this section was: streams_waterbodies.qmd.\nFor information on data processing, see Appendix A.3.1.",
     "crumbs": [
       "Hydrology",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Streams and Waterbodies</span>"
     ]
   },
   {
     "objectID": "freshwater_inflows.html",
     "href": "freshwater_inflows.html",
-    "title": "7  Freshwater Inflows",
+    "title": "6  Freshwater Inflows",
     "section": "",
-    "text": "Pearl River, Pascagoula River, bays. Do some summarizing based on USGS gage data?",
+    "text": "About\nThe .qmd file that generated this section was: freshwater_inflows.qmd.\nFor information on data processing, see Appendix A.3.2.",
     "crumbs": [
       "Hydrology",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Freshwater Inflows</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Freshwater Inflows</span>"
     ]
   },
   {
     "objectID": "salinity.html",
     "href": "salinity.html",
-    "title": "8  Salinity",
+    "title": "7  Salinity",
     "section": "",
-    "text": "Summarize the info from the Gulf Data Atlas (e.g. the maps that went into the CCMP). Would be great to summarize the USGS salinity data and DMR’s sampling data as well - some seasonal and annual details would be great.",
+    "text": "About\nThe .qmd file that generated this section was: salinity.qmd.\nFor information on data processing, see Appendix A.3.3.",
     "crumbs": [
       "Hydrology",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Salinity</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Salinity</span>"
     ]
   },
   {
     "objectID": "population.html",
     "href": "population.html",
-    "title": "9  Population",
+    "title": "8  Population",
     "section": "",
-    "text": "9.1 Entire watershed\nThis estimate includes the portions of the watershed in Louisiana and Alabama:",
+    "text": "8.1 Entire watershed\nThis estimate includes the portions of the watershed in Louisiana and Alabama:\n1,718,504",
     "crumbs": [
       "People and Land Use",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
-    ]
-  },
-  {
-    "objectID": "population.html#entire-watershed",
-    "href": "population.html#entire-watershed",
-    "title": "9  Population",
-    "section": "",
-    "text": "1,718,504",
-    "crumbs": [
-      "People and Land Use",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Population</span>"
     ]
   },
   {
     "objectID": "population.html#watershed-in-the-state-of-ms",
     "href": "population.html#watershed-in-the-state-of-ms",
-    "title": "9  Population",
-    "section": "9.2 Watershed in the state of MS",
-    "text": "9.2 Watershed in the state of MS\nThis estimate includes the state of Mississippi only:\n\n1,539,090",
+    "title": "8  Population",
+    "section": "8.2 Watershed in the state of MS",
+    "text": "8.2 Watershed in the state of MS\nThis estimate includes the state of Mississippi only:\n\n1,539,090",
     "crumbs": [
       "People and Land Use",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Population</span>"
     ]
   },
   {
-    "objectID": "population.html#data-sources",
-    "href": "population.html#data-sources",
-    "title": "9  Population",
-    "section": "9.3 Data Sources",
-    "text": "9.3 Data Sources\nThe .qmd file that generated this section was: population.qmd.\n\n9.3.0.1 Dasymetric Population Estimates\nThe EPA EnviroAtlas’s dasymetric population datasets “intelligently reallocate … population from census blocks to 30 meter pixels based on land cover and slope”. The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.\nThe original downloaded file (zipped; ~3.6 GB) is available in the Population folder of the msepCharacterization data files directory.\nThe dataset was trimmed to Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script Population_2020_subsetting.R (on github) in the R_preprocessing folder.\nThe resulting file, Population_Dasymetric_2020.tif, is available in the processed folder of the msepCharacterization data files directory.",
+    "objectID": "population.html#about",
+    "href": "population.html#about",
+    "title": "8  Population",
+    "section": "About",
+    "text": "About\nThe .qmd file that generated this section was: population.qmd.\nFor information on data processing, see Appendix A.4.1.",
     "crumbs": [
       "People and Land Use",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Population</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Population</span>"
     ]
   },
   {
     "objectID": "landuse_landcover.html",
     "href": "landuse_landcover.html",
-    "title": "10  Land Use / Land Cover",
+    "title": "9  Land Use / Land Cover",
     "section": "",
-    "text": "Summarize LULC info by MDEQ basin here",
+    "text": "About\nThe .qmd file that generated this section was: landuse_landcover.qmd.\nFor information on data processing, see Appendix A.4.2.",
     "crumbs": [
       "People and Land Use",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Land Use / Land Cover</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Land Use / Land Cover</span>"
     ]
   },
   {
@@ -244,7 +255,7 @@
     "href": "data_processing.html#geographic-setting",
     "title": "Appendix A: Data Processing",
     "section": "",
-    "text": "A.1.1 HUCs\nFrom National Hydrography Dataset\n\n\nA.1.2 MDEQ Basins\nData provided by MDEQ\n\n\nA.1.3 EPA Ecoregions\nJump to Chapter 3\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
+    "text": "A.1.1 Watersheds\nJump to Chapter 1\n\nA.1.1.1 HUCs\nstuff\n\n\nA.1.1.2 MDEQ Basins\nData provided by MDEQ\n\n\n\nA.1.2 EPA Ecoregions\nJump to Chapter 2\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
@@ -255,7 +266,40 @@
     "href": "data_processing.html#climatology",
     "title": "Appendix A: Data Processing",
     "section": "A.2 Climatology",
-    "text": "A.2 Climatology\n\nA.2.1 Precipitation\nClimate normals workup",
+    "text": "A.2 Climatology\n\nA.2.1 Precipitation\nJump to Chapter 3\nClimate normals workup\n\n\nA.2.2 Temperature\nJump to Chapter 4\nClimate normals workup",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "data_processing.html#hydrology",
+    "href": "data_processing.html#hydrology",
+    "title": "Appendix A: Data Processing",
+    "section": "A.3 Hydrology",
+    "text": "A.3 Hydrology\n\nA.3.1 Streams and Waterbodies\nJump to Chapter 5\n\nA.3.1.1 Stream Lengths and Waterbody Areas\nStream Lengths and Waterbody Areas were calculated from the EPA’s NHDPlus dataset. Files for the South Atlantic (03f) and Lower Mississippi River (03g) regions were downloaded on 12 June 2025. The original downloaded files are available in the EPA NHDPlus folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to only the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPANHD_subsetting.R (on github) in the R_preprocessing folder. The resulting files were saved as geopackages EPA_NHDplus_flowline_MSEP.gpkg and EPA_NHDplus_waterbody_MSEP.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.\n\n\nA.3.1.2 Designated Uses\nShapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ’s Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, “all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife.” See their website for more information.\nThe zipped shapefiles are available in the DEQ_designated_uses folder of the msepCharacterization data files directory. However, we encourage you to contact MDEQ to get the most up-to-date files for your own analyses.\n\n\nA.3.1.3 Impairments\nNot done yet but see MDEQ’s online TMDL Tool.\n\n\n\nA.3.2 Freshwater Inflows\nJump to Chapter 6\nStuff\n\n\nA.3.3 Salinity\nJump to Chapter 7\nStuff - Gulf Data Atlas especially",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "data_processing.html#people-and-land-use",
+    "href": "data_processing.html#people-and-land-use",
+    "title": "Appendix A: Data Processing",
+    "section": "A.4 People and Land Use",
+    "text": "A.4 People and Land Use\n\nA.4.1 Population\nJump to Chapter 8\n\nA.4.1.1 Dasymetric Population Estimates\nThe EPA EnviroAtlas’s dasymetric population datasets “intelligently reallocate … population from census blocks to 30 meter pixels based on land cover and slope”. The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.\nThe original downloaded file (zipped; ~3.6 GB) is available in the Population folder of the msepCharacterization data files directory.\nThe dataset was trimmed to Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script Population_2020_subsetting.R (on github) in the R_preprocessing folder.\nThe resulting file, Population_Dasymetric_2020.tif, is available in the processed folder of the msepCharacterization data files directory.\n\n\n\nA.4.2 Land Use / Land Cover\nJump to Chapter 9\nStuff",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "data_processing.html#about",
+    "href": "data_processing.html#about",
+    "title": "Appendix A: Data Processing",
+    "section": "About",
+    "text": "About\nThe .qmd file that generated this section was: data_processing.qmd.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"

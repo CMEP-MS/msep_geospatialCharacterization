@@ -1,4 +1,4 @@
-# Population  
+# Population  {#sec-population} 
 
 The values calculated below are based on 2020 US Census data. The population estimate for the entire state of Mississippi was ~2.96 million in 2020.  
 
@@ -43,31 +43,24 @@ pop_msep_msonly <- mask(pop2020, msep_ms,
 
 This estimate includes the portions of the watershed in Louisiana and Alabama:    
 
-::: {.summary-numberA}
+<p class = "summary-numberA">
 **`r prettyNum(sum(values(pop_watershed), na.rm = TRUE), big.mark = ",")`**
-:::
+</p>
 
 
 ## Watershed in the state of MS  
 
 This estimate includes the state of Mississippi only:    
 
-::: {.summary-numberA}
+<p class = "summary-numberA">
 **`r prettyNum(sum(values(pop_msep_msonly), na.rm = TRUE), big.mark = ",")`**
-:::
+</p>
 
 
 
-## Data Sources  
+## About {.unnumbered}   
 
-**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**.  
+**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**. 
 
-#### Dasymetric Population Estimates  
+For information on data processing, see [Appendix @sec-processingPopulation].
 
-The [EPA EnviroAtlas's](https://www.epa.gov/enviroatlas/data-download) dasymetric population datasets "intelligently reallocate ... population from census blocks to 30 meter pixels based on land cover and slope". The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.
-
-The original downloaded file (zipped; ~3.6 GB) is available in the [Population](https://drive.google.com/drive/folders/1EBiRPhoXG1JNPFQDTasVWiJJI2LV6B-Y?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
-
-The dataset was trimmed to Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `Population_2020_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Population_2020_subsetting.R)) in the `R_preprocessing` folder. 
-
-The resulting file, `Population_Dasymetric_2020.tif`, is available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  

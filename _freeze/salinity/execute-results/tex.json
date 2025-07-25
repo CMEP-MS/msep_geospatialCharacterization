@@ -1,0 +1,21 @@
+{
+  "hash": "997870d5b0ecfc65d1544fa626bc2fea",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Salinity {#sec-salinity}  \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\nSummarize the info from the Gulf Data Atlas (e.g. the maps that went into the CCMP). Would be great to summarize the USGS salinity data and DMR's sampling data as well - some seasonal and annual details would be great.  \n\n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **salinity.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingSalinity].",
+    "supporting": [
+      "salinity_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

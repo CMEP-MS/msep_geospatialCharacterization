@@ -1,18 +1,31 @@
-# Data Processing  {#sec-dataProcessing}
+# Data Processing  {#sec-dataProcessing}  
+
+In general, links to original data sources are provided in each section below. Because data files are routinely updated, the files as downloaded and used in this document are also available online. Files are provided for reproducibility and transparency; for your own analyses, we encourage you to seek out data from the original linked sources.  
+
+```{r}
+
+```
+
 
 ## Geographic Setting  
 
-### HUCs {#sec-processingHUCs}  
+### Watersheds {#sec-processingWatersheds}  
 
-From National Hydrography Dataset  
+*Jump to @sec-Watersheds*
 
-### MDEQ Basins {#sec-processingMDEQBasins}  
+#### HUCs  
+
+stuff
+
+#### MDEQ Basins  
 
 Data provided by MDEQ  
 
+
+
 ### EPA Ecoregions {#sec-processingEPAEcoregions}  
 
-Jump to @sec-EPAEcoregions
+*Jump to @sec-EPAEcoregions*
 
 Level 3 and 4 Ecoregion shapefiles were downloaded from the [EPA's website](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-state) on 16 June 2025 for the states of MS, AL, and LA.   
 
@@ -26,5 +39,84 @@ The resulting objects were saved as layers of a geopackage,   `EPA_EcoRegion.gpk
 
 ### Precipitation {#sec-processingPrecipitation}  
 
+*Jump to @sec-Precipitation*
+
 Climate normals workup  
+
+
+### Temperature {#sec-processingTemperature}  
+
+*Jump to @sec-Temperature*
+
+Climate normals workup  
+
+
+## Hydrology  
+
+### Streams and Waterbodies {#sec-processingStreamsWaterbodies} 
+
+*Jump to @sec-streamsWaterbodies*  
+
+
+#### Stream Lengths and Waterbody Areas  
+
+Stream Lengths and Waterbody Areas were calculated from the [EPA's NHDPlus](https://www.epa.gov/waterdata/nhdplus-national-hydrography-dataset-plus) dataset. Files for the [South Atlantic (03f)](https://www.epa.gov/waterdata/nhdplus-south-atlantic-west-data-vector-processing-unit-03w) and [Lower Mississippi River (03g)](https://www.epa.gov/waterdata/nhdplus-lower-mississippi-data-vector-processing-unit-08) regions were downloaded on 12 June 2025. The original downloaded files are available in the [EPA NHDPlus](https://drive.google.com/drive/folders/1QIMCH0Ae41V2k9ndVEZl-WMy8zcbbF1w?usp=sharing) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+Those files were read in, combined, and clipped to only the Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `EPANHD_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/EPANHD_subsetting.R)) in the `R_preprocessing` folder. The resulting files were saved as geopackages  `EPA_NHDplus_flowline_MSEP.gpkg` and `EPA_NHDplus_waterbody_MSEP.gpkg` in the `data/processed` folder. These files are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+#### Designated Uses  
+
+Shapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ's Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, "all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife." See [their website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/basins-and-streams/) for more information.  
+
+The zipped shapefiles are available in the [DEQ_designated_uses](https://drive.google.com/drive/folders/1JejePFJIRB0002POIhglPhP3YxWHvfqF?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory. **However, we encourage you to contact MDEQ to get the most up-to-date files for your own analyses.** 
+
+#### Impairments  
+
+Not done yet but see MDEQ's online [TMDL Tool](https://opcgis.deq.state.ms.us/tmdltool/).
+
+
+### Freshwater Inflows {#sec-processingFreshwaterInflows} 
+
+*Jump to @sec-freshwaterInflows*  
+
+Stuff
+
+
+### Salinity  {#sec-processingSalinity} 
+
+*Jump to @sec-salinity*  
+
+Stuff - Gulf Data Atlas especially  
+
+
+## People and Land Use  
+
+### Population  {#sec-processingPopulation}
+
+*Jump to @sec-population*  
+
+
+#### Dasymetric Population Estimates  
+
+The [EPA EnviroAtlas's](https://www.epa.gov/enviroatlas/data-download) dasymetric population datasets "intelligently reallocate ... population from census blocks to 30 meter pixels based on land cover and slope". The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.
+
+The original downloaded file (zipped; ~3.6 GB) is available in the [Population](https://drive.google.com/drive/folders/1EBiRPhoXG1JNPFQDTasVWiJJI2LV6B-Y?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+The dataset was trimmed to Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `Population_2020_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Population_2020_subsetting.R)) in the `R_preprocessing` folder. 
+
+The resulting file, `Population_Dasymetric_2020.tif`, is available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+
+### Land Use / Land Cover {#sec-processingLULC} 
+
+*Jump to @sec-lulc*  
+
+Stuff
+
+
+
+
+## About {.unnumbered}   
+
+**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**. 
 

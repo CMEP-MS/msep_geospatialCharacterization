@@ -29,8 +29,7 @@ book:
     
     - part: geographic_setting.qmd
       chapters: 
-        - HUCs.qmd
-        - MDEQ_Basins.qmd
+        - watersheds.qmd
         - EPA_Ecoregions.qmd
     
     - part: climatology.qmd

@@ -1,0 +1,21 @@
+{
+  "hash": "18dcfcaebd309888de56fa4d483b6d6c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Temperature {#sec-Temperature} \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\nSome descriptions and maps of temperature normals  \n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **temperature.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingTemperature].\n",
+    "supporting": [
+      "temperature_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

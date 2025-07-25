@@ -1,7 +1,0 @@
-# HUCs  
-
-Nice explanation of HUCs [this USGS page](https://nas.er.usgs.gov/hucs.aspx).  
-
-The HUCs that make up the Mississippi Sound Watershed are 0317 (Pascagoula) and 0318 (Pearl).  
-
-Show some mappy breakdowns.  

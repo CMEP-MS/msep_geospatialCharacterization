@@ -1,0 +1,15 @@
+{
+  "hash": "b10cd7e3a80d86969e8134fd4c3c2971",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Land Use / Land Cover {#sec-lulc} \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\nSummarize LULC info by MDEQ basin here  \n\n\n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **landuse_landcover.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingLULC].",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

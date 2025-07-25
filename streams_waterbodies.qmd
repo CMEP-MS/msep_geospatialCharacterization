@@ -1,4 +1,4 @@
-# Streams and Waterbodies  
+# Streams and Waterbodies {#sec-streamsWaterbodies}  
 
 ```{r}
 library(tidyverse)
@@ -259,21 +259,9 @@ rm(stream_length_summ, stream_lengths, streams,
 
 303d, TMDLs - How many, where are they, what are the TMDLs for. What problems are we dealing with in the watershed.   
 
+## About {.unnumbered}   
 
-## Data Sources  
+**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**. 
 
-**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**.  
+For information on data processing, see [Appendix @sec-processingStreamsWaterbodies].
 
-#### Stream Lengths and Waterbody Areas  
-
-Stream Lengths and Waterbody Areas were calculated from the [EPA's NHDPlus](https://www.epa.gov/waterdata/nhdplus-national-hydrography-dataset-plus) dataset. Files for the [South Atlantic (03f)](https://www.epa.gov/waterdata/nhdplus-south-atlantic-west-data-vector-processing-unit-03w) and [Lower Mississippi River (03g)](https://www.epa.gov/waterdata/nhdplus-lower-mississippi-data-vector-processing-unit-08) regions were downloaded on 12 June 2025. The original downloaded files are available in the [EPA NHDPlus](https://drive.google.com/drive/folders/1QIMCH0Ae41V2k9ndVEZl-WMy8zcbbF1w?usp=sharing) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
-
-Those files were read in, combined, and clipped to only the Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `EPANHD_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/preprocessing_scripts/EPANHD_subsetting.R)) in the `R_preprocessing` folder. The resulting files were saved as geopackages  `EPA_NHDplus_flowline_MSEP.gpkg` and `EPA_NHDplus_waterbody_MSEP.gpkg` in the `data/processed` folder. These files are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
-
-#### Designated Uses  
-
-Shapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ's Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, "all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife." See [their website](https://www.mdeq.ms.gov/water/surface-water/watershed-management/water-quality-standards/basins-and-streams/) for more information.  
-
-The zipped shapefiles are available in **to fill in**.  
-
-#### Impairments  

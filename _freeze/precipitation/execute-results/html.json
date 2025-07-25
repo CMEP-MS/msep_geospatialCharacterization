@@ -1,0 +1,15 @@
+{
+  "hash": "65cbd74ed9ba6a8395cd4eb43f82298e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Precipitation {#sec-Precipitation}  \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\nMake the precip maps here.  \n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **precipitation.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingPrecipitation].\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

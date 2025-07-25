@@ -1,0 +1,15 @@
+{
+  "hash": "78a3d1ec3ae5525b30c3a182d7072e67",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Watersheds {#sec-Watersheds}  \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n## HUCs  \n\nNice explanation of HUCs on [this USGS page](https://nas.er.usgs.gov/hucs.aspx).  \n\nThe HUCs that make up the Mississippi Sound Watershed are 0317 (Pascagoula) and 0318 (Pearl).  \n\nShow some mappy breakdowns.  \n\n\n## MDEQ Basin Boundaries  \n\nThere are several waterways that don't actually end up in either the Pearl or Pascagoula Rivers. So the Mississippi Department of Environmental Quality uses a slightly different division.  \n\nNEED TO CONFIRM, but I think: HUC12s are the same between MDEQ's classification and the USGS HUCs. They're just grouped differently, and the streams that empty into bays or straight into the Sound are the 'Coastal Streams Basin'. There is also a 'Coastal Offshore' grouping, that is comprised of the Sound itself, the islands, and the 3-mile zone beyond the islands.    \n\n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **watersheds.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingWatersheds].",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

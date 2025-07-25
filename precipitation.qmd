@@ -1,3 +1,14 @@
-# Precipitation  
+# Precipitation {#sec-Precipitation}  
+
+```{r}
+
+```
+
 
 Make the precip maps here.  
+
+## About {.unnumbered}   
+
+**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**. 
+
+For information on data processing, see [Appendix @sec-processingPrecipitation].
