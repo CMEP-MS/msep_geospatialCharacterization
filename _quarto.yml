@@ -23,6 +23,7 @@ book:
   cover-image-alt: "MSEP logo"
   navbar:
     logo: MSEP-logo2.png
+  
   chapters:
     - index.qmd
     
@@ -47,9 +48,16 @@ book:
       chapters:
         - population.qmd
         - landuse_landcover.qmd
-    
+        
     - summary.qmd
+    
+  appendices:
+    - data_processing.qmd
+    
+
     # - references.qmd
+    
+
 
 # bibliography: references.bib
 

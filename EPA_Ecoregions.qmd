@@ -1,4 +1,4 @@
-# EPA Ecoregions  
+# EPA Ecoregions {#sec-EPAEcoregions}  
 
 For some geological classification that isn't based on watershed boundaries, we turn to the [EPA's Ecoregions](https://www.epa.gov/eco-research/ecoregions).  
 
@@ -100,16 +100,11 @@ tm_shape(msep4) +
 ```
 
 
-## Data Sources  
+### About {.unnumbered}   
 
-**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**.  
+**The `.qmd` file** that generated this section was: **`r xfun::with_ext(knitr::current_input(), "qmd")`**. 
 
-#### Ecoregions  
+For information on data processing, see [Appendix @sec-processingEPAEcoregions].
 
-Level 3 and 4 Ecoregion shapefiles were downloaded from the [EPA's website](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-state) on 16 June 2025 for the states of MS, AL, and LA.   
 
-The original downloaded files along with their metadata files are available in the [EPA EcoRegions](https://drive.google.com/drive/folders/1Q8fZpHI-R40OW7dmQBE0e-VsQ0uSC7R1?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
 
-Those files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `EPAEcoRegion_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/EPAEcoRegion_subsetting.R)) in the `R_preprocessing` folder. Three objects resulted: `level3_lamsal`, level 3 ecoregions for the 3 states combined; `level3_mssoundwatershed`, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and `level4_mssoundwatershed`, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.  
-
-The resulting objects were saved as layers of a geopackage,   `EPA_EcoRegion.gpkg` in the `data/processed` folder. These files are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  

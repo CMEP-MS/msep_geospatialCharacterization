@@ -58,18 +58,7 @@
     "href": "EPA_Ecoregions.html#level-4-ecoregions",
     "title": "3  EPA Ecoregions",
     "section": "3.2 Level 4 Ecoregions",
-    "text": "3.2 Level 4 Ecoregions\n\n\n\n\n\n\n\n\n\nFigure 3.3: Level 4 Ecoregions in the Mississippi Sound Watershed.",
-    "crumbs": [
-      "Geographic Setting",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
-    ]
-  },
-  {
-    "objectID": "EPA_Ecoregions.html#data-sources",
-    "href": "EPA_Ecoregions.html#data-sources",
-    "title": "3  EPA Ecoregions",
-    "section": "3.3 Data Sources",
-    "text": "3.3 Data Sources\nThe .qmd file that generated this section was: EPA_Ecoregions.qmd.\n\n3.3.0.1 Ecoregions\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
+    "text": "3.2 Level 4 Ecoregions\n\n\n\n\n\n\n\n\n\nFigure 3.3: Level 4 Ecoregions in the Mississippi Sound Watershed.\n\n\n\n\n\nAbout\nThe .qmd file that generated this section was: EPA_Ecoregions.qmd.\nFor information on data processing, see Appendix A.1.3.",
     "crumbs": [
       "Geographic Setting",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>EPA Ecoregions</span>"
@@ -232,11 +221,44 @@
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "11  Summary",
+    "title": "Summary",
     "section": "",
     "text": "Unsure what would go in a summary chapter ……",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Summary</span>"
+      "Summary"
+    ]
+  },
+  {
+    "objectID": "data_processing.html",
+    "href": "data_processing.html",
+    "title": "Appendix A: Data Processing",
+    "section": "",
+    "text": "A.1 Geographic Setting",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "data_processing.html#geographic-setting",
+    "href": "data_processing.html#geographic-setting",
+    "title": "Appendix A: Data Processing",
+    "section": "",
+    "text": "A.1.1 HUCs\nFrom National Hydrography Dataset\n\n\nA.1.2 MDEQ Basins\nData provided by MDEQ\n\n\nA.1.3 EPA Ecoregions\nJump to Chapter 3\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "data_processing.html#climatology",
+    "href": "data_processing.html#climatology",
+    "title": "Appendix A: Data Processing",
+    "section": "A.2 Climatology",
+    "text": "A.2 Climatology\n\nA.2.1 Precipitation\nClimate normals workup",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
     ]
   },
   {
