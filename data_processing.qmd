@@ -1,6 +1,6 @@
 # Data Processing  {#sec-dataProcessing}  
 
-In general, links to original data sources are provided in each section below. Because data files are routinely updated, the files as downloaded and used in this document are also available online. Files are provided for reproducibility and transparency; for your own analyses, we encourage you to seek out data from the original linked sources.  
+In general, links to original data sources are provided in each section below. Because data files are routinely updated, the files as downloaded and used in this document are also available online. These files are provided for reproducibility and transparency; for your own analyses, we encourage you to seek out data from the original linked sources.  
 
 ```{r}
 
@@ -19,7 +19,7 @@ stuff
 
 #### MDEQ Basins  
 
-Data provided by MDEQ  
+Shapefiles were provided by the Mississippi Department of Environmental Quality in August 2025. The zipped shapefiles are available in the [DEQ_basins](https://drive.google.com/drive/folders/1j-qbIAm_DVzoeyIU5EJgpUypAdNM0Lyc?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory. **However, we encourage you to contact MDEQ to get the most up-to-date files for your own analyses.**
 
 
 
