@@ -82,7 +82,7 @@ writeCDF(prcp_30yr_in,
          here(out_path, "prcp_30yrNormals.nc"),
          overwrite = TRUE)
 writeCDF(prcp_100yr_in,
-         here(out_path, "prcp_100yrNormals.nc"),
+         here(out_path, "prcp_100yrBaseline.nc"),
          overwrite = TRUE)
 writeCDF(prcp_15yr_in,
          here(out_path, "prcp_15yrNormals.nc"),
