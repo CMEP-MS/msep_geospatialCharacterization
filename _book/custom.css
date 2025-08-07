@@ -1,4 +1,4 @@
-/* Make all child divs in the legend left-aligned */
+/* Make all child divs in a tmap legend left-aligned */
 .info.legend > div {
   text-align: left !important;
 }

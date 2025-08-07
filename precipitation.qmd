@@ -1,11 +1,161 @@
 # Precipitation {#sec-Precipitation}  
 
+The maps and information below were generated from gridded (spatial) climate normals: values averaged over 15, 30, or 100 years. Data were obtained from the National Centers for Environmental Information (NCEI).  
+
 ```{r}
+library(sf)
+library(terra)
+library(RColorBrewer)
+library(ggplot2)
+library(dplyr)
+library(tidyterra)
+library(tigris)
+options(tigris_use_cache = TRUE)
+library(here)
+library(msepBoundaries)
+
+in_path <- here::here("data", "processed")
+
+lamsal <- states(cb = TRUE) |> 
+    filter(NAME %in% c("Louisiana",
+                       "Mississippi",
+                       "Alabama"))
+```
+
+```{r}
+dat_30yr <- rast(here(in_path, "prcp_30yrNormals.nc"))
+monthly_30yr <- dat_30yr["mlyprcp_norm"]
+names(monthly_30yr) <- month.abb
+annual_30yr <- dat_30yr["annprcp_norm"]
+```
+
+```{r}
+dat_15yr <- rast(here(in_path, "prcp_15yrNormals.nc"))
+monthly_15yr <- dat_15yr["mlyprcp_norm"]
+names(monthly_15yr) <- month.abb
+annual_15yr <- dat_15yr["annprcp_norm"]
+```
+
+```{r}
+dat_100yr <- rast(here(in_path, "prcp_100yrBaseline.nc"))
+monthly_100yr <- dat_100yr["mlyprcp_norm"]
+names(monthly_100yr) <- month.abb
+annual_100yr <- dat_100yr["annprcp_norm"]
+```
+
+```{r}
+annual_combined <- c(annual_100yr, annual_30yr, annual_15yr)
+names(annual_combined) <- c("100-year baseline \n(1901-2000)",
+                            "30-year normal \n(1991-2020)",
+                            "15-year normal \n(2006-2020)")
+```
+
+```{r}
+rm(annual_100yr, annual_30yr, annual_15yr,
+   dat_100yr, dat_30yr, dat_15yr)
 
 ```
 
+```{r}
+lamsal <- st_transform(lamsal, crs = st_crs(annual_combined))
+msep_boundary <- st_transform(outline_full, crs = st_crs(annual_combined))
+```
 
-Make the precip maps here.  
+```{r}
+#| eval: false
+
+# to help pick limits for color scales
+min(values(monthly_30yr), na.rm = TRUE)  # 2.67
+max(values(monthly_30yr), na.rm = TRUE)  # 8.21
+
+min(values(annual_combined), na.rm = TRUE)  # 47.56
+max(values(annual_combined), na.rm = TRUE)  # 67.63
+```
+
+
+```{r}
+breaks_monthly <- seq(2.5, 8.5, by = 1)
+colors_monthly <- colorRampPalette(brewer.pal(9, "GnBu"))(length(breaks_monthly) - 1) 
+
+breaks_annual <- seq(45, 70, by = 5)
+colors_annual <- colorRampPalette(brewer.pal(9, "GnBu"))(length(breaks_annual) - 1) 
+```
+
+
+## Annual Totals  
+
+```{r}
+#| label: fig-prcpAnnual
+#| fig-cap: "Annual Precipitation averaged over 100, 30, and 15 years."
+#| fig-width: 8
+#| fig-height: 5
+
+p <- ggplot() +
+    geom_spatraster(data = annual_combined) +
+    facet_wrap(~lyr,
+               ncol = 3) +
+    scale_fill_stepsn(
+        colours = colors_annual,
+        breaks = breaks_annual,
+        limits = c(min(breaks_annual), max(breaks_annual)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound Watershed"),
+            linewidth = 0.7) +
+    scale_color_manual(values = c("Mississippi Sound Watershed" = "#D94F02")) +
+    theme_void() +
+    theme(legend.position = "bottom",
+          strip.text = element_text(size = rel(0.9), 
+                                    face = "bold")) +
+    labs(fill = "Inches",
+         col = "",
+         caption = "Data source: National Centers for Environmental Information")
+p
+```
+
+
+## Monthly Totals (30-year normal)  
+
+```{r}
+#| label: fig-prcpMonthly
+#| fig-cap: "Monthly Precipitation, averaged over 30 years."
+#| fig-width: 8
+#| fig-height: 6
+
+p <- ggplot() +
+    geom_spatraster(data = monthly_30yr) +
+    facet_wrap(~lyr) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.7) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = "#D94F02")) +
+    theme_void() +
+    theme(legend.position = "right",
+          strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = "Inches",
+         col = "",
+         caption = "Data source: National Centers for Environmental Information")
+p
+```
+
+
+
 
 ## About {.unnumbered}   
 

@@ -1,9 +1,11 @@
 {
-  "hash": "18dcfcaebd309888de56fa4d483b6d6c",
+  "hash": "919a8cb44910676de3a38b8f5e53f2fa",
   "result": {
     "engine": "knitr",
-    "markdown": "# Temperature {#sec-Temperature} \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\nSome descriptions and maps of temperature normals  \n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **temperature.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingTemperature].\n",
-    "supporting": [],
+    "markdown": "# Temperature {#sec-Temperature} \n\nThe maps and information below were generated from gridded (spatial) climate normals: values averaged over 15, 30, or 100 years. Data were obtained from the National Centers for Environmental Information (NCEI).  \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n## Annual Mean Temperature  \n\n\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![Annual Mean Temperature averaged over 100, 30, and 15 years.](temperature_files/figure-html/fig-tempAnnual-1.png){#fig-tempAnnual width=768}\n:::\n:::\n\n\n\n\n\n\n\n## Monthly Mean Temperature   \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n### Cool Months  \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![Comparison of long-term winter temperature averages across a 100-year baseline, and 30- and 15-year normals.](temperature_files/figure-html/fig-tmpNormalsWinter-1.png){#fig-tmpNormalsWinter width=672}\n:::\n:::\n\n\n\n\n\n\n\n### Warm Months  \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![Comparison of long-term spring and summer temperature averages across a 100-year baseline, and 30- and 15-year normals.](temperature_files/figure-html/fig-tmpNormalsSpringSummer-1.png){#fig-tmpNormalsSpringSummer width=768}\n:::\n:::\n\n\n\n\n\n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **temperature.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingTemperature].\n",
+    "supporting": [
+      "temperature_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

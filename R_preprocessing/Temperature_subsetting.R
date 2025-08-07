@@ -19,20 +19,31 @@ lamsal <- states(cb = FALSE) |>
 dat_nc <- rast(here(dir_path, 
                     "tavg-1991_2020-monthly-normals-v1.0.nc"))
 # pull out layers we want
-dat_monthly <- dat_nc[[c(grep("mlytavg_norm", names(dat_nc)), 
-                         which(names(dat_nc) == "anntavg_norm"))]]
+dat_monthly <- dat_nc["mlytavg_norm"]
+dat_annual <- dat_nc["anntavg_norm"]
 # name them
-names(dat_monthly) <- c(month.abb, "annual")
+names(dat_monthly) <- month.abb
+names(dat_annual) <- "annual"
 # crop and mask to 3 states
 lamsal <- st_transform(lamsal, crs = st_crs(dat_monthly))
 dat_monthly <- crop(dat_monthly, lamsal)
 dat_monthly <- mask(dat_monthly, lamsal)
-# convert to inches and rename
-tmp_30yr_in <- dat_monthly / 25.4
-units(tmp_30yr_in) <- rep("inches", nlyr(dat_monthly))
+dat_annual <- crop(dat_annual, lamsal)
+dat_annual <- mask(dat_annual, lamsal)
+# convert to F
+dat_monthly <- (dat_monthly * 9/5) + 32
+units(dat_monthly) <- "degree_Fahrenheit"
+dat_annual <- (dat_annual * 9/5) + 32
+units(dat_annual) <- "degree_Fahrenheit"
+
+# combine and write out
+combined <- sds(dat_monthly, dat_annual)
+writeCDF(combined,
+         here(out_path, "tempAvg_30yrNormals.nc"),
+         overwrite = TRUE)
 
 # cleanup
-rm(dat_nc, dat_monthly)
+rm(dat_nc, dat_monthly, dat_annual, combined)
 
 
 # 100 year, 1901-2000 ----
@@ -40,20 +51,31 @@ rm(dat_nc, dat_monthly)
 dat_nc <- rast(here(dir_path, 
                     "tavg-1901_2000-monthly-normals-v1.0.nc"))
 # pull out layers we want
-dat_monthly <- dat_nc[[c(grep("mlytavg_norm", names(dat_nc)), 
-                         which(names(dat_nc) == "anntavg_norm"))]]
+dat_monthly <- dat_nc["mlytavg_norm"]
+dat_annual <- dat_nc["anntavg_norm"]
 # name them
-names(dat_monthly) <- c(month.abb, "annual")
+names(dat_monthly) <- month.abb
+names(dat_annual) <- "annual"
 # crop and mask to 3 states
 lamsal <- st_transform(lamsal, crs = st_crs(dat_monthly))
 dat_monthly <- crop(dat_monthly, lamsal)
 dat_monthly <- mask(dat_monthly, lamsal)
-# convert to inches and rename
-tmp_100yr_in <- dat_monthly / 25.4
-units(tmp_100yr_in) <- rep("inches", nlyr(dat_monthly))
+dat_annual <- crop(dat_annual, lamsal)
+dat_annual <- mask(dat_annual, lamsal)
+# convert to F
+dat_monthly <- (dat_monthly * 9/5) + 32
+units(dat_monthly) <- "degree_Fahrenheit"
+dat_annual <- (dat_annual * 9/5) + 32
+units(dat_annual) <- "degree_Fahrenheit"
+
+# combine and write out
+combined <- sds(dat_monthly, dat_annual)
+writeCDF(combined,
+         here(out_path, "tempAvg_100yrBaseline.nc"),
+         overwrite = TRUE)
 
 # cleanup
-rm(dat_nc, dat_monthly)
+rm(dat_nc, dat_monthly, dat_annual, combined)
 
 
 # 15 year, 2006-2020 ----
@@ -61,29 +83,29 @@ rm(dat_nc, dat_monthly)
 dat_nc <- rast(here(dir_path, 
                     "tavg-2006_2020-monthly-normals-v1.0.nc"))
 # pull out layers we want
-dat_monthly <- dat_nc[[c(grep("mlytavg_norm", names(dat_nc)), 
-                         which(names(dat_nc) == "anntavg_norm"))]]
+dat_monthly <- dat_nc["mlytavg_norm"]
+dat_annual <- dat_nc["anntavg_norm"]
 # name them
-names(dat_monthly) <- c(month.abb, "annual")
+names(dat_monthly) <- month.abb
+names(dat_annual) <- "annual"
 # crop and mask to 3 states
 lamsal <- st_transform(lamsal, crs = st_crs(dat_monthly))
 dat_monthly <- crop(dat_monthly, lamsal)
 dat_monthly <- mask(dat_monthly, lamsal)
-# convert to inches and rename
-tmp_15yr_in <- dat_monthly / 25.4
-units(tmp_15yr_in) <- rep("inches", nlyr(dat_monthly))
+dat_annual <- crop(dat_annual, lamsal)
+dat_annual <- mask(dat_annual, lamsal)
+# convert to F
+dat_monthly <- (dat_monthly * 9/5) + 32
+units(dat_monthly) <- "degree_Fahrenheit"
+dat_annual <- (dat_annual * 9/5) + 32
+units(dat_annual) <- "degree_Fahrenheit"
 
-# cleanup
-rm(dat_nc, dat_monthly)
-
-
-# save out ----
-writeCDF(tmp_30yr_in,
-         here(out_path, "tempAvg_30yrNormals.nc"),
-         overwrite = TRUE)
-writeCDF(tmp_100yr_in,
-         here(out_path, "tempAvg_100yrBaseline.nc"),
-         overwrite = TRUE)
-writeCDF(tmp_15yr_in,
+# combine and write out
+combined <- sds(dat_monthly, dat_annual)
+writeCDF(combined,
          here(out_path, "tempAvg_15yrNormals.nc"),
          overwrite = TRUE)
+
+# cleanup
+rm(dat_nc, dat_monthly, dat_annual, combined)
+

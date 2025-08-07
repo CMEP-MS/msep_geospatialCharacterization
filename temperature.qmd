@@ -1,11 +1,339 @@
 # Temperature {#sec-Temperature} 
 
+The maps and information below were generated from gridded (spatial) climate normals: values averaged over 15, 30, or 100 years. Data were obtained from the National Centers for Environmental Information (NCEI).  
+
 ```{r}
+library(sf)
+library(terra)
+library(RColorBrewer)
+library(ggplot2)
+library(dplyr)
+library(tidyterra)
+library(tigris)
+options(tigris_use_cache = TRUE)
+library(here)
+library(msepBoundaries)
+library(stringr)
+library(patchwork)
+
+in_path <- here::here("data", "processed")
+
+lamsal <- states(cb = TRUE) |> 
+    filter(NAME %in% c("Louisiana",
+                       "Mississippi",
+                       "Alabama"))
+```
+
+```{r}
+dat_30yr <- rast(here(in_path, "tempAvg_30yrNormals.nc"))
+monthly_30yr <- dat_30yr["mlytavg_norm"]
+names(monthly_30yr) <- month.abb
+annual_30yr <- dat_30yr["anntavg_norm"]
+```
+
+```{r}
+dat_15yr <- rast(here(in_path, "tempAvg_15yrNormals.nc"))
+monthly_15yr <- dat_15yr["mlytavg_norm"]
+names(monthly_15yr) <- month.abb
+annual_15yr <- dat_15yr["anntavg_norm"]
+```
+
+```{r}
+dat_100yr <- rast(here(in_path, "tempAvg_100yrBaseline.nc"))
+monthly_100yr <- dat_100yr["mlytavg_norm"]
+names(monthly_100yr) <- month.abb
+annual_100yr <- dat_100yr["anntavg_norm"]
+```
+
+```{r}
+annual_combined <- c(annual_100yr, annual_30yr, annual_15yr)
+names(annual_combined) <- c("100-year baseline \n(1901-2000)",
+                            "30-year normal \n(1991-2020)",
+                            "15-year normal \n(2006-2020)")
+```
+
+```{r}
+rm(annual_100yr, annual_30yr, annual_15yr,
+   dat_100yr, dat_30yr, dat_15yr)
 
 ```
 
+```{r}
+lamsal <- st_transform(lamsal, crs = st_crs(annual_combined))
+msep_boundary <- st_transform(outline_full, crs = st_crs(annual_combined))
+```
 
-Some descriptions and maps of temperature normals  
+```{r}
+#| eval: false
+
+# to help pick limits for color scales
+min(values(monthly_30yr), na.rm = TRUE)  # 38.01
+max(values(monthly_30yr), na.rm = TRUE)  # 83.70
+
+min(values(annual_combined), na.rm = TRUE)  # 57.34
+max(values(annual_combined), na.rm = TRUE)  # 71.33
+```
+
+
+```{r}
+breaks_monthly <- seq(35, 85, by = 5)
+labels_monthly <- as.character(breaks_monthly)
+labels_monthly[which(str_ends(labels_monthly, "0"))] <- ""
+colors_monthly <- colorRampPalette(brewer.pal(9, "YlOrBr"))(length(breaks_monthly) - 1) 
+
+breaks_annual <- seq(55, 73, by = 3)
+colors_annual <- colorRampPalette(brewer.pal(9, "YlOrBr"))(length(breaks_annual) - 1) 
+```
+
+
+## Annual Mean Temperature  
+
+```{r}
+#| label: fig-tempAnnual
+#| fig-cap: "Annual Mean Temperature averaged over 100, 30, and 15 years."
+#| fig-width: 8
+#| fig-height: 5
+
+p <- ggplot() +
+    geom_spatraster(data = annual_combined) +
+    facet_wrap(~lyr,
+               ncol = 3) +
+    scale_fill_stepsn(
+        colours = colors_annual,
+        breaks = breaks_annual,
+        limits = c(min(breaks_annual), max(breaks_annual)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound Watershed"),
+            linewidth = 0.7) +
+    scale_color_manual(values = c("Mississippi Sound Watershed" = "navy")) +
+    theme_void() +
+    theme(legend.position = "bottom",
+          strip.text = element_text(size = rel(0.9), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         caption = "Data source: National Centers for Environmental Information")
+p
+```
+
+
+## Monthly Mean Temperature   
+
+```{r}
+col_msep <- "#008B8B"
+
+# steelblue
+# this teal works pretty well #008080
+# this dark cyan works even better #008B8B
+# cadet blue is pretty good too #5F9EA0
+```
+
+
+### Cool Months  
+
+```{r}
+p30 <- ggplot() +
+    geom_spatraster(data = monthly_30yr[[c("Nov", "Dec", "Jan", "Feb", "Mar")]]) +
+    facet_wrap(~lyr,
+               nrow = 1) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        labels = labels_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
+    theme_void() +
+    theme(strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         subtitle = "30-year normal")
+```
+
+```{r}
+p15 <- ggplot() +
+    geom_spatraster(data = monthly_15yr[[c("Nov", "Dec", "Jan", "Feb", "Mar")]]) +
+    facet_wrap(~lyr,
+               nrow = 1) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        labels = labels_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
+    theme_void() +
+    theme(strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         subtitle = "15-year normal")
+```
+
+
+```{r}
+p100 <- ggplot() +
+    geom_spatraster(data = monthly_100yr[[c("Nov", "Dec", "Jan", "Feb", "Mar")]]) +
+    facet_wrap(~lyr,
+               nrow = 1) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        labels = labels_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
+    theme_void() +
+    theme(strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         subtitle = "100-year baseline")
+
+```
+
+```{r}
+#| label: fig-tmpNormalsWinter
+#| fig-cap: "Comparison of long-term winter temperature averages across a 100-year baseline, and 30- and 15-year normals."
+
+
+p100 / p30 / p15 +
+    plot_layout(guides = "collect") +
+    plot_annotation(caption = "Data source: National Centers for Environmental Information") &
+    theme(legend.position = "right")
+```
+
+
+### Warm Months  
+
+```{r}
+p30 <- ggplot() +
+    geom_spatraster(data = monthly_30yr[[c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct")]]) +
+    facet_wrap(~lyr,
+               nrow = 1) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        labels = labels_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
+    theme_void() +
+    theme(strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         subtitle = "30-year normal")
+```
+
+```{r}
+p15 <- ggplot() +
+    geom_spatraster(data = monthly_15yr[[c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct")]]) +
+    facet_wrap(~lyr,
+               nrow = 1) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        labels = labels_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
+    theme_void() +
+    theme(strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         subtitle = "15-year normal")
+```
+
+
+```{r}
+p100 <- ggplot() +
+    geom_spatraster(data = monthly_100yr[[c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct")]]) +
+    facet_wrap(~lyr,
+               nrow = 1) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        labels = labels_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
+    theme_void() +
+    theme(strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         subtitle = "100-year baseline")
+
+```
+
+```{r}
+#| label: fig-tmpNormalsSpringSummer
+#| fig-cap: "Comparison of long-term spring and summer temperature averages across a 100-year baseline, and 30- and 15-year normals."
+#| fig-height: 6
+#| fig-width: 8
+
+p100 / p30 / p15 +
+    plot_layout(guides = "collect") +
+    plot_annotation(caption = "Data source: National Centers for Environmental Information") &
+    theme(legend.position = "bottom")
+```
 
 ## About {.unnumbered}   
 

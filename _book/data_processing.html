@@ -294,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In general, links to original data sources are provided in each section below. Because data files are routinely updated, the files as downloaded and used in this document are also available online. Files are provided for reproducibility and transparency; for your own analyses, we encourage you to seek out data from the original linked sources.</p>
+<p>In general, links to original data sources are provided in each section below. Because data files are routinely updated, the files as downloaded and used in this document are also available online. These files are provided for reproducibility and transparency; for your own analyses, we encourage you to seek out data from the original linked sources.</p>
 <section id="geographic-setting" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="geographic-setting"><span class="header-section-number">A.1</span> Geographic Setting</h2>
 <section id="sec-processingWatersheds" class="level3" data-number="A.1.1">
@@ -306,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="mdeq-basins" class="level4" data-number="A.1.1.2">
 <h4 data-number="A.1.1.2" class="anchored" data-anchor-id="mdeq-basins"><span class="header-section-number">A.1.1.2</span> MDEQ Basins</h4>
-<p>Data provided by MDEQ</p>
+<p>Shapefiles were provided by the Mississippi Department of Environmental Quality in August 2025. The zipped shapefiles are available in the <a href="https://drive.google.com/drive/folders/1j-qbIAm_DVzoeyIU5EJgpUypAdNM0Lyc?usp=drive_link">DEQ_basins</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory. <strong>However, we encourage you to contact MDEQ to get the most up-to-date files for your own analyses.</strong></p>
 </section>
 </section>
 <section id="sec-processingEPAEcoregions" class="level3" data-number="A.1.2">
@@ -323,12 +323,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-processingPrecipitation" class="level3" data-number="A.2.1">
 <h3 data-number="A.2.1" class="anchored" data-anchor-id="sec-processingPrecipitation"><span class="header-section-number">A.2.1</span> Precipitation</h3>
 <p><em>Jump to <a href="precipitation.html" class="quarto-xref"><span>Chapter 3</span></a></em></p>
-<p>Climate normals workup</p>
+<p>Precipitation normals (over 15 and 30 years, and a 100-year baseline: 2006-2020, 1991-2020, and 1901-2000 respectively) were downloaded as “gridded normals” from the <a href="https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals">National Centers for Environmental Information Climate Normals website</a> as netCDF (.nc) files. The downloaded files as used are available in the <a href="https://drive.google.com/drive/folders/13Qc-6VAia3fbVI9-mld_jnX_jQxoohDq?usp=drive_link">Precipitation_NCEI</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
+<p>These were subsetted to only monthly and annual value layers (removing layers with sd, min, max, and flags) and trimmed geographically to the states of MS, LA, and AL in the file <code>Precipitation_subsetting.R</code> (<a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Precipitation_subsetting.R">on github</a>) in the <code>R_preprocessing</code> folder.</p>
+<p>The resulting files were saved as netCDF files <code>prcp_15yearNormals.nc</code>, <code>prcp_30yearNormals.nc</code>, and <code>prcp_100yearBaseline.nc</code> in the <code>data/processed</code> folder. These files are available in the <a href="https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link">processed</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
 </section>
 <section id="sec-processingTemperature" class="level3" data-number="A.2.2">
 <h3 data-number="A.2.2" class="anchored" data-anchor-id="sec-processingTemperature"><span class="header-section-number">A.2.2</span> Temperature</h3>
 <p><em>Jump to <a href="temperature.html" class="quarto-xref"><span>Chapter 4</span></a></em></p>
-<p>Climate normals workup</p>
+<p>Average Temperature normals (over 15 and 30 years, and a 100-year baseline: 2006-2020, 1991-2020, and 1901-2000 respectively) were downloaded as “gridded normals” from the <a href="https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals">National Centers for Environmental Information Climate Normals website</a> as netCDF (.nc) files. The downloaded files as used are available in the <a href="https://drive.google.com/drive/folders/1C5PaE-9UhNleWuXcePL-33qVD_0p1Z8-?usp=drive_link">Temperature_NCEI</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
+<p>These were subsetted to only monthly and annual value layers (removing layers with sd, min, max, and flags) and trimmed geographically to the states of MS, LA, and AL in the file <code>Temperature_subsetting.R</code> (<a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Temperature_subsetting.R">on github</a>) in the <code>R_preprocessing</code> folder.</p>
+<p>The resulting files were saved as netCDF files <code>tempAvg_15yearNormals.nc</code>, <code>tempAvg_30yearNormals.nc</code>, and <code>tempAvg_100yearBaseline.nc</code> in the <code>data/processed</code> folder. These files are available in the <a href="https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link">processed</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
 </section>
 </section>
 <section id="hydrology" class="level2" data-number="A.3">

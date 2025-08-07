@@ -91,6 +91,28 @@
     "href": "precipitation.html",
     "title": "3  Precipitation",
     "section": "",
+    "text": "3.1 Annual Totals\nFigure 3.1: Annual Precipitation averaged over 100, 30, and 15 years.",
+    "crumbs": [
+      "Climatology",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Precipitation</span>"
+    ]
+  },
+  {
+    "objectID": "precipitation.html#monthly-totals-30-year-normal",
+    "href": "precipitation.html#monthly-totals-30-year-normal",
+    "title": "3  Precipitation",
+    "section": "3.2 Monthly Totals (30-year normal)",
+    "text": "3.2 Monthly Totals (30-year normal)\n\n\n\n\n\n\n\n\nFigure 3.2: Monthly Precipitation, averaged over 30 years.",
+    "crumbs": [
+      "Climatology",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Precipitation</span>"
+    ]
+  },
+  {
+    "objectID": "precipitation.html#about",
+    "href": "precipitation.html#about",
+    "title": "3  Precipitation",
+    "section": "About",
     "text": "About\nThe .qmd file that generated this section was: precipitation.qmd.\nFor information on data processing, see Appendix A.2.1.",
     "crumbs": [
       "Climatology",
@@ -102,6 +124,28 @@
     "href": "temperature.html",
     "title": "4  Temperature",
     "section": "",
+    "text": "4.1 Annual Mean Temperature\nFigure 4.1: Annual Mean Temperature averaged over 100, 30, and 15 years.",
+    "crumbs": [
+      "Climatology",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "temperature.html#monthly-mean-temperature",
+    "href": "temperature.html#monthly-mean-temperature",
+    "title": "4  Temperature",
+    "section": "4.2 Monthly Mean Temperature",
+    "text": "4.2 Monthly Mean Temperature\n\n4.2.1 Cool Months\n\n\n\n\n\n\n\n\nFigure 4.2: Comparison of long-term winter temperature averages across a 100-year baseline, and 30- and 15-year normals.\n\n\n\n\n\n\n\n4.2.2 Warm Months\n\n\n\n\n\n\n\n\nFigure 4.3: Comparison of long-term spring and summer temperature averages across a 100-year baseline, and 30- and 15-year normals.",
+    "crumbs": [
+      "Climatology",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "temperature.html#about",
+    "href": "temperature.html#about",
+    "title": "4  Temperature",
+    "section": "About",
     "text": "About\nThe .qmd file that generated this section was: temperature.qmd.\nFor information on data processing, see Appendix A.2.2.",
     "crumbs": [
       "Climatology",
@@ -255,7 +299,7 @@
     "href": "data_processing.html#geographic-setting",
     "title": "Appendix A: Data Processing",
     "section": "",
-    "text": "A.1.1 Watersheds\nJump to Chapter 1\n\nA.1.1.1 HUCs\nstuff\n\n\nA.1.1.2 MDEQ Basins\nData provided by MDEQ\n\n\n\nA.1.2 EPA Ecoregions\nJump to Chapter 2\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
+    "text": "A.1.1 Watersheds\nJump to Chapter 1\n\nA.1.1.1 HUCs\nstuff\n\n\nA.1.1.2 MDEQ Basins\nShapefiles were provided by the Mississippi Department of Environmental Quality in August 2025. The zipped shapefiles are available in the DEQ_basins folder of the msepCharacterization data files directory. However, we encourage you to contact MDEQ to get the most up-to-date files for your own analyses.\n\n\n\nA.1.2 EPA Ecoregions\nJump to Chapter 2\nLevel 3 and 4 Ecoregion shapefiles were downloaded from the EPA’s website on 16 June 2025 for the states of MS, AL, and LA.\nThe original downloaded files along with their metadata files are available in the EPA EcoRegions folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPAEcoRegion_subsetting.R (on github) in the R_preprocessing folder. Three objects resulted: level3_lamsal, level 3 ecoregions for the 3 states combined; level3_mssoundwatershed, level 3 ecoregions trimmed to only the Mississippi Sound Watershed area; and level4_mssoundwatershed, level 4 ecoregions trimmed to only the Mississippi Sound Watershed area. The level 4 ecoregions for the entire three states were not retained because there were so many categories; it really only makes sense to look at these at the smaller level.\nThe resulting objects were saved as layers of a geopackage, EPA_EcoRegion.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
@@ -266,7 +310,7 @@
     "href": "data_processing.html#climatology",
     "title": "Appendix A: Data Processing",
     "section": "A.2 Climatology",
-    "text": "A.2 Climatology\n\nA.2.1 Precipitation\nJump to Chapter 3\nClimate normals workup\n\n\nA.2.2 Temperature\nJump to Chapter 4\nClimate normals workup",
+    "text": "A.2 Climatology\n\nA.2.1 Precipitation\nJump to Chapter 3\nPrecipitation normals (over 15 and 30 years, and a 100-year baseline: 2006-2020, 1991-2020, and 1901-2000 respectively) were downloaded as “gridded normals” from the National Centers for Environmental Information Climate Normals website as netCDF (.nc) files. The downloaded files as used are available in the Precipitation_NCEI folder of the msepCharacterization data files directory.\nThese were subsetted to only monthly and annual value layers (removing layers with sd, min, max, and flags) and trimmed geographically to the states of MS, LA, and AL in the file Precipitation_subsetting.R (on github) in the R_preprocessing folder.\nThe resulting files were saved as netCDF files prcp_15yearNormals.nc, prcp_30yearNormals.nc, and prcp_100yearBaseline.nc in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.\n\n\nA.2.2 Temperature\nJump to Chapter 4\nAverage Temperature normals (over 15 and 30 years, and a 100-year baseline: 2006-2020, 1991-2020, and 1901-2000 respectively) were downloaded as “gridded normals” from the National Centers for Environmental Information Climate Normals website as netCDF (.nc) files. The downloaded files as used are available in the Temperature_NCEI folder of the msepCharacterization data files directory.\nThese were subsetted to only monthly and annual value layers (removing layers with sd, min, max, and flags) and trimmed geographically to the states of MS, LA, and AL in the file Temperature_subsetting.R (on github) in the R_preprocessing folder.\nThe resulting files were saved as netCDF files tempAvg_15yearNormals.nc, tempAvg_30yearNormals.nc, and tempAvg_100yearBaseline.nc in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
