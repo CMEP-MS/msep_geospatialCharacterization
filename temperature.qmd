@@ -86,6 +86,15 @@ colors_annual <- colorRampPalette(brewer.pal(9, "YlOrBr"))(length(breaks_annual)
 ```
 
 
+```{r}
+col_msep <- "#008B8B"
+
+# steelblue
+# this teal works pretty well #008080
+# this dark cyan works even better #008B8B
+# cadet blue is pretty good too #5F9EA0
+```
+
 ## Annual Mean Temperature  
 
 ```{r}
@@ -110,8 +119,8 @@ p <- ggplot() +
     geom_sf(data = msep_boundary,
             fill = NA,
             aes(col = "Mississippi Sound Watershed"),
-            linewidth = 0.7) +
-    scale_color_manual(values = c("Mississippi Sound Watershed" = "navy")) +
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound Watershed" = col_msep)) +
     theme_void() +
     theme(legend.position = "bottom",
           strip.text = element_text(size = rel(0.9), 
@@ -124,15 +133,6 @@ p
 
 
 ## Monthly Mean Temperature   
-
-```{r}
-col_msep <- "#008B8B"
-
-# steelblue
-# this teal works pretty well #008080
-# this dark cyan works even better #008B8B
-# cadet blue is pretty good too #5F9EA0
-```
 
 
 ### Cool Months  
