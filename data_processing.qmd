@@ -43,7 +43,7 @@ The resulting objects were saved as layers of a geopackage,   `EPA_EcoRegion.gpk
 
 Precipitation normals (over 15 and 30 years, and a 100-year baseline: 2006-2020, 1991-2020, and 1901-2000 respectively) were downloaded as "gridded normals" from the [National Centers for Environmental Information Climate Normals website](https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals) as netCDF (.nc) files. The downloaded files as used are available in the [Precipitation_NCEI](https://drive.google.com/drive/folders/13Qc-6VAia3fbVI9-mld_jnX_jQxoohDq?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.
 
-These were subsetted to only monthly and annual value layers (removing layers with sd, min, and max) and trimmed geographically to the states of MS, LA, and AL in the file `Precipitation_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Precipitation_subsetting.R)) in the `R_preprocessing` folder.  
+These were subsetted to only monthly and annual value layers (removing layers with sd, min, max, and flags) and trimmed geographically to the states of MS, LA, and AL in the file `Precipitation_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Precipitation_subsetting.R)) in the `R_preprocessing` folder.  
 
 The resulting files were saved as netCDF files  `prcp_15yearNormals.nc`, `prcp_30yearNormals.nc`, and `prcp_100yearBaseline.nc` in the `data/processed` folder. These files are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
 
@@ -52,7 +52,11 @@ The resulting files were saved as netCDF files  `prcp_15yearNormals.nc`, `prcp_3
 
 *Jump to @sec-Temperature*
 
-Climate normals workup  
+Average Temperature normals (over 15 and 30 years, and a 100-year baseline: 2006-2020, 1991-2020, and 1901-2000 respectively) were downloaded as "gridded normals" from the [National Centers for Environmental Information Climate Normals website](https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals) as netCDF (.nc) files. The downloaded files as used are available in the [Temperature_NCEI](https://drive.google.com/drive/folders/1C5PaE-9UhNleWuXcePL-33qVD_0p1Z8-?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.
+
+These were subsetted to only monthly and annual value layers (removing layers with sd, min, max, and flags) and trimmed geographically to the states of MS, LA, and AL in the file `Temperature_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/Temperature_subsetting.R)) in the `R_preprocessing` folder.  
+
+The resulting files were saved as netCDF files  `tempAvg_15yearNormals.nc`, `tempAvg_30yearNormals.nc`, and `tempAvg_100yearBaseline.nc` in the `data/processed` folder. These files are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
 
 
 ## Hydrology  
