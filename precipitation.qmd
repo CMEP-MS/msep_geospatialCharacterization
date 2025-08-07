@@ -81,6 +81,10 @@ breaks_annual <- seq(45, 70, by = 5)
 colors_annual <- colorRampPalette(brewer.pal(9, "GnBu"))(length(breaks_annual) - 1) 
 ```
 
+```{r}
+col_msep <- "#D94F02"
+
+```
 
 ## Annual Totals  
 
@@ -106,8 +110,8 @@ p <- ggplot() +
     geom_sf(data = msep_boundary,
             fill = NA,
             aes(col = "Mississippi Sound Watershed"),
-            linewidth = 0.7) +
-    scale_color_manual(values = c("Mississippi Sound Watershed" = "#D94F02")) +
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound Watershed" = col_msep)) +
     theme_void() +
     theme(legend.position = "bottom",
           strip.text = element_text(size = rel(0.9), 
@@ -142,8 +146,8 @@ p <- ggplot() +
     geom_sf(data = msep_boundary,
             fill = NA,
             aes(col = "Mississippi Sound \nWatershed"),
-            linewidth = 0.7) +
-    scale_color_manual(values = c("Mississippi Sound \nWatershed" = "#D94F02")) +
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
     theme_void() +
     theme(legend.position = "right",
           strip.text = element_text(size = rel(0.8), 
