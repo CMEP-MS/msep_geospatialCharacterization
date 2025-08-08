@@ -51,14 +51,70 @@ names(annual_combined) <- c("100-year baseline \n(1901-2000)",
 ```
 
 ```{r}
-rm(annual_100yr, annual_30yr, annual_15yr,
-   dat_100yr, dat_30yr, dat_15yr)
-
+lamsal <- st_transform(lamsal, crs = st_crs(annual_combined))
+msep_boundary <- st_transform(outline_full, crs = st_crs(annual_combined))
 ```
 
 ```{r}
-lamsal <- st_transform(lamsal, crs = st_crs(annual_combined))
-msep_boundary <- st_transform(outline_full, crs = st_crs(annual_combined))
+# stats from 30-year normals
+msep_30yr <- crop(annual_30yr, msep_boundary)
+msep_30yr <- mask(msep_30yr, msep_boundary)
+
+# get data frames to summarize
+msep_30yr <- values(msep_30yr) |> 
+    na.omit() |> 
+    sort()
+
+
+n_pixels <- 50
+# ms sound watershed
+msep_lowest <- head(msep_30yr, n_pixels)
+msep_highest <- tail(msep_30yr, n_pixels)
+
+msep_min <- round(mean(msep_lowest))
+msep_max <- round(mean(msep_highest))
+msep_mean <- round(mean(msep_30yr))
+msep_median <- round(median(msep_30yr))
+```
+
+```{r}
+# 100-yr comps
+msep_100yr <- crop(annual_100yr, msep_boundary)
+msep_100yr <- mask(msep_100yr, msep_boundary)
+
+msep_100yr <- values(msep_100yr) |> 
+    na.omit() |> 
+    sort()
+
+# ms sound watershed
+msep_lowest_100yr <- head(msep_100yr, n_pixels)
+msep_highest_100yr <- tail(msep_100yr, n_pixels)
+
+msep_min_100yr <- round(mean(msep_lowest_100yr))
+msep_max_100yr <- round(mean(msep_highest_100yr))
+msep_mean_100yr <- round(mean(msep_100yr))
+msep_median_100yr <- round(median(msep_100yr))
+```
+
+
+```{r}
+# monthly info
+msep_monthly <- crop(monthly_30yr, msep_boundary)
+msep_monthly <- mask(msep_monthly, msep_boundary)
+
+msep_july <- values(msep_monthly["Jul"]) |> 
+    na.omit() |> 
+    sort()
+
+# ms sound watershed
+msep_highest_july <- tail(msep_july, n_pixels)
+msep_max_july <- round(mean(msep_highest_july), 1)
+```
+
+```{r}
+rm(annual_100yr, annual_30yr, annual_15yr,
+   dat_100yr, dat_30yr, dat_15yr)
+
 ```
 
 ```{r}
@@ -87,6 +143,8 @@ col_msep <- "#D94F02"
 ```
 
 ## Annual Totals  
+
+The coast receives more rain annually than more inland portions of Louisiana, Mississippi, and Alabama (@fig-prcpAnnual). Based on 30-year climate normals (1991-2020), median annual precipitation in the Mississippi Sound Watershed is `r msep_median` inches. The lowest annual totals, around `r msep_min` inches per year, occur in the northern part of the watershed, with coastal areas receiving around `r msep_max` inches per year. These 30-year normals are somewhat higher than the 100-year baseline period of 1901-2000 (min: `r msep_min_100yr` in; median: `r msep_median_100yr` in; max: `r msep_max_100yr` in).
 
 ```{r}
 #| label: fig-prcpAnnual
@@ -124,6 +182,8 @@ p
 
 
 ## Monthly Totals (30-year normal)  
+
+Seasonal patterns of precipitation also differ throughout the Mississippi Sound Watershed (@fig-prcpMonthly). Coastal areas receive most annual precipitation from June through August (up to `r msep_max_july` inches along the coast in July), while more inland areas receive the most from winter through spring. Tropical storms and hurricanes can and do cause higher precipitation totals than these averages; the peak of hurricane season is typically September-October.   
 
 ```{r}
 #| label: fig-prcpMonthly

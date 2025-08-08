@@ -3,18 +3,27 @@
 The maps and information below were generated from gridded (spatial) climate normals: values averaged over 15, 30, or 100 years. Data were obtained from the National Centers for Environmental Information (NCEI).  
 
 ```{r}
-library(sf)
-library(terra)
+# tidyverse-related pkgs
+library(here)
+library(dplyr)
+library(stringr)
+library(purrr)
+library(tibble)
+library(tidyr)
 library(RColorBrewer)
 library(ggplot2)
-library(dplyr)
+library(patchwork)
+
+# spatial packages
+library(sf)
+library(terra)
 library(tidyterra)
 library(tigris)
 options(tigris_use_cache = TRUE)
-library(here)
+
+# other pkgs
 library(msepBoundaries)
-library(stringr)
-library(patchwork)
+
 
 in_path <- here::here("data", "processed")
 
@@ -52,16 +61,43 @@ names(annual_combined) <- c("100-year baseline \n(1901-2000)",
                             "15-year normal \n(2006-2020)")
 ```
 
+
+```{r}
+lamsal <- st_transform(lamsal, crs = st_crs(annual_combined))
+msep_boundary <- st_transform(outline_full, crs = st_crs(annual_combined))
+```
+
+```{r}
+msep_30yr <- crop(monthly_30yr, msep_boundary)
+msep_30yr <- mask(msep_30yr, msep_boundary)
+
+# get summary stats for each layer
+mins <- global(msep_30yr, "min", na.rm = TRUE)
+means <- global(msep_30yr, "mean", na.rm = TRUE)
+maxes <- global(msep_30yr, "max", na.rm = TRUE)
+all <- cbind(mins, means, maxes) |> 
+    rownames_to_column("Month") |> 
+    mutate(across(c(min, mean, max), 
+                  function(x) round(x, 1)),
+           Month = factor(Month, levels = month.abb))
+
+coldest_months <- all |> 
+    dplyr::slice_min(min, n = 3) |> 
+    arrange(mean)
+
+hottest_months <- all |> 
+    dplyr::slice_max(max, n = 3) |> 
+    arrange(desc(mean))
+    
+```
+
+
 ```{r}
 rm(annual_100yr, annual_30yr, annual_15yr,
    dat_100yr, dat_30yr, dat_15yr)
 
 ```
 
-```{r}
-lamsal <- st_transform(lamsal, crs = st_crs(annual_combined))
-msep_boundary <- st_transform(outline_full, crs = st_crs(annual_combined))
-```
 
 ```{r}
 #| eval: false
@@ -134,8 +170,53 @@ p
 
 ## Monthly Mean Temperature   
 
+### 30-year normals  
 
-### Cool Months  
+Based on monthly averages over a 30-year period (1991-2020; see @tbl-tempMonthly30yr and @fig-tempMonthly30yr), the coldest month in the Mississippi Sound Watershed is January. The lowest mean January value, in the northern part of the watershed, is `r coldest_months$min[1]` °F, with temperatures along the coast being higher at `r coldest_months$max[1]` °F. The hottest month is July, at `r hottest_months$min[1]` °F in the northern part of the watershed and `r hottest_months$max[1]` °F along the coast.
+
+```{r}
+#| label: tbl-tempMonthly30yr
+#| tbl-cap: "Monthly mean temperature by month in the Mississippi Sound Watershed, averaged over 30 years (1991-2020). For each month, the minimum, mean, and maximum of the monthly means within the watershed are provided."
+
+knitr::kable(all)
+```
+
+
+```{r}
+#| label: fig-tempMonthly30yr
+#| fig-cap: "Monthly mean temperature averaged over 30 years (1991-2020)."
+
+ggplot() +
+    geom_spatraster(data = monthly_30yr) +
+    facet_wrap(~lyr) +
+    scale_fill_stepsn(
+        colours = colors_monthly,
+        breaks = breaks_monthly,
+        labels = labels_monthly,
+        limits = c(min(breaks_monthly), max(breaks_monthly)),
+        na.value = NA
+    ) +
+    geom_sf(data = lamsal,
+            fill = NA,
+            col = "black") +
+    geom_sf(data = msep_boundary,
+            fill = NA,
+            aes(col = "Mississippi Sound \nWatershed"),
+            linewidth = 0.8) +
+    scale_color_manual(values = c("Mississippi Sound \nWatershed" = col_msep)) +
+    theme_void() +
+    theme(strip.text = element_text(size = rel(0.8), 
+                                    face = "bold")) +
+    labs(fill = expression(degree*F),
+         col = "",
+         caption = "Data source: National Centers for Environmental Information")
+```
+
+### Comparing time periods  
+
+The maps below show only a subset of months. Each map contains the averages over a 100-year baseline, and 30- and 15- year normals. Each time period is a row, and the months line up vertically. Louisiana in particular shows some differences based on the time of aggregation in March and June.  
+
+#### Cool Months  
 
 ```{r}
 p30 <- ggplot() +
@@ -163,6 +244,7 @@ p30 <- ggplot() +
     labs(fill = expression(degree*F),
          col = "",
          subtitle = "30-year normal")
+
 ```
 
 ```{r}
@@ -235,7 +317,7 @@ p100 / p30 / p15 +
 ```
 
 
-### Warm Months  
+#### Warm Months  
 
 ```{r}
 p30 <- ggplot() +

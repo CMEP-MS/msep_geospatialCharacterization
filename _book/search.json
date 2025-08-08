@@ -91,7 +91,7 @@
     "href": "precipitation.html",
     "title": "3  Precipitation",
     "section": "",
-    "text": "3.1 Annual Totals\nFigure 3.1: Annual Precipitation averaged over 100, 30, and 15 years.",
+    "text": "3.1 Annual Totals\nThe coast receives more rain annually than more inland portions of Louisiana, Mississippi, and Alabama (Figure 3.1). Based on 30-year climate normals (1991-2020), median annual precipitation in the Mississippi Sound Watershed is 60 inches. The lowest annual totals, around 56 inches per year, occur in the northern part of the watershed, with coastal areas receiving around 66 inches per year. These 30-year normals are somewhat higher than the 100-year baseline period of 1901-2000 (min: 52 in; median: 58 in; max: 64 in).\nFigure 3.1: Annual Precipitation averaged over 100, 30, and 15 years.",
     "crumbs": [
       "Climatology",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Precipitation</span>"
@@ -102,7 +102,7 @@
     "href": "precipitation.html#monthly-totals-30-year-normal",
     "title": "3  Precipitation",
     "section": "3.2 Monthly Totals (30-year normal)",
-    "text": "3.2 Monthly Totals (30-year normal)\n\n\n\n\n\n\n\n\nFigure 3.2: Monthly Precipitation, averaged over 30 years.",
+    "text": "3.2 Monthly Totals (30-year normal)\nSeasonal patterns of precipitation also differ throughout the Mississippi Sound Watershed (Figure 3.2). Coastal areas receive most annual precipitation from June through August (up to 8 inches along the coast in July), while more inland areas receive the most from winter through spring. Tropical storms and hurricanes can and do cause higher precipitation totals than these averages; the peak of hurricane season is typically September-October.\n\n\n\n\n\n\n\n\nFigure 3.2: Monthly Precipitation, averaged over 30 years.",
     "crumbs": [
       "Climatology",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Precipitation</span>"
@@ -135,7 +135,7 @@
     "href": "temperature.html#monthly-mean-temperature",
     "title": "4  Temperature",
     "section": "4.2 Monthly Mean Temperature",
-    "text": "4.2 Monthly Mean Temperature\n\n4.2.1 Cool Months\n\n\n\n\n\n\n\n\nFigure 4.2: Comparison of long-term winter temperature averages across a 100-year baseline, and 30- and 15-year normals.\n\n\n\n\n\n\n\n4.2.2 Warm Months\n\n\n\n\n\n\n\n\nFigure 4.3: Comparison of long-term spring and summer temperature averages across a 100-year baseline, and 30- and 15-year normals.",
+    "text": "4.2 Monthly Mean Temperature\n\n4.2.1 30-year normals\nBased on monthly averages over a 30-year period (1991-2020; see Table 4.1 and Figure 4.2), the coldest month in the Mississippi Sound Watershed is January. The lowest mean January value, in the northern part of the watershed, is 43.5 °F, with temperatures along the coast being higher at 52 °F. The hottest month is July, at 79.8 °F in the northern part of the watershed and 82.7 °F along the coast.\n\n\n\n\nTable 4.1: Monthly mean temperature by month in the Mississippi Sound Watershed, averaged over 30 years (1991-2020). For each month, the minimum, mean, and maximum of the monthly means within the watershed are provided.\n\n\n\n\n\n\nMonth\nmin\nmean\nmax\n\n\n\n\nJan\n43.5\n48.1\n52.0\n\n\nFeb\n47.4\n52.0\n55.7\n\n\nMar\n54.7\n58.5\n61.4\n\n\nApr\n61.9\n64.9\n67.9\n\n\nMay\n70.1\n72.5\n75.3\n\n\nJun\n77.2\n78.8\n81.1\n\n\nJul\n79.8\n81.1\n82.7\n\n\nAug\n79.3\n80.6\n82.9\n\n\nSep\n74.0\n76.2\n79.4\n\n\nOct\n63.1\n66.1\n70.8\n\n\nNov\n52.3\n55.9\n60.6\n\n\nDec\n45.8\n50.1\n54.3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.2: Monthly mean temperature averaged over 30 years (1991-2020).\n\n\n\n\n\n\n\n4.2.2 Comparing time periods\nThe maps below show only a subset of months. Each map contains the averages over a 100-year baseline, and 30- and 15- year normals. Each time period is a row, and the months line up vertically. Louisiana in particular shows some differences based on the time of aggregation in March and June.\n\n4.2.2.1 Cool Months\n\n\n\n\n\n\n\n\nFigure 4.3: Comparison of long-term winter temperature averages across a 100-year baseline, and 30- and 15-year normals.\n\n\n\n\n\n\n\n4.2.2.2 Warm Months\n\n\n\n\n\n\n\n\nFigure 4.4: Comparison of long-term spring and summer temperature averages across a 100-year baseline, and 30- and 15-year normals.",
     "crumbs": [
       "Climatology",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Temperature</span>"
