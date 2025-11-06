@@ -382,7 +382,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-processingLULC" class="level3" data-number="A.4.2">
 <h3 data-number="A.4.2" class="anchored" data-anchor-id="sec-processingLULC"><span class="header-section-number">A.4.2</span> Land Use / Land Cover</h3>
 <p><em>Jump to <a href="landuse_landcover.html" class="quarto-xref"><span>Chapter 9</span></a></em></p>
-<p>Stuff</p>
+<p>Land Use/Land Cover data was downloaded from the <a href="https://www.usgs.gov/centers/eros/science/annual-national-land-cover-database">USGS Annual National Land Cover Database</a> in April 2025. Each pixel represents 30x30m.</p>
+<p>The original downloaded file, <code>Annual_NLCD_LndCov_2023_CU_C1V0.tif</code> (~1.4 GB), covers the entire continental US and is available in the <a href="https://drive.google.com/drive/folders/17NVwSFlhkudjbZlCnzCbWmLcr52NuyHR?usp=drive_link">NLCD</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
+<p>The dataset was trimmed to Mississippi Sound Watershed boundaries (using the <code>outline_full</code> object from the <a href="https://github.com/CMEP-MS/msepBoundaries"><code>{msepBoundaries}</code> package</a>) using the script <code>NLCD_subsetting.R</code> (<a href="https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/NLCD_subsetting.R">on github</a>) in the <code>R_preprocessing</code> folder. Factor levels associated with the NLCD categories were also associated during this process and are part of the auxiliary file that loads with the dataset in R.</p>
+<p>The resulting files, <code>NLCD_MSEP.tif</code> and <code>NLCD_MSEP.tif.aux.xml</code> (the file with associated factor levels), are available in the <a href="https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link">processed</a> folder of the <a href="https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing">msepCharacterization data files</a> directory.</p>
 </section>
 </section>
 <section id="about" class="level2 unnumbered">

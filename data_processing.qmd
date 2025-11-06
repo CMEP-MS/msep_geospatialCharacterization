@@ -119,7 +119,13 @@ The resulting file, `Population_Dasymetric_2020.tif`, is available in the [proce
 
 *Jump to @sec-lulc*  
 
-Stuff
+Land Use/Land Cover data was downloaded from the [USGS Annual National Land Cover Database](https://www.usgs.gov/centers/eros/science/annual-national-land-cover-database) in April 2025. Each pixel represents 30x30m.
+
+The original downloaded file, `Annual_NLCD_LndCov_2023_CU_C1V0.tif` (~1.4 GB), covers the entire continental US and is available in the [NLCD](https://drive.google.com/drive/folders/17NVwSFlhkudjbZlCnzCbWmLcr52NuyHR?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
+
+The dataset was trimmed to Mississippi Sound Watershed boundaries (using the `outline_full` object from the [`{msepBoundaries}` package](https://github.com/CMEP-MS/msepBoundaries)) using the script `NLCD_subsetting.R` ([on github](https://github.com/CMEP-MS/msep_geospatialCharacterization/blob/main/R_preprocessing/NLCD_subsetting.R)) in the `R_preprocessing` folder. Factor levels associated with the NLCD categories were also associated during this process and are part of the auxiliary file that loads with the dataset in R. 
+
+The resulting files, `NLCD_MSEP.tif` and `NLCD_MSEP.tif.aux.xml` (the file with associated factor levels), are available in the [processed](https://drive.google.com/drive/folders/1vnTANkxh7lsAcTYFBr4sBuevKoYOGQG4?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
 
 
 
