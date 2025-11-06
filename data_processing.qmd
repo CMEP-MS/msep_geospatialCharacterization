@@ -119,7 +119,7 @@ The resulting file, `Population_Dasymetric_2020.tif`, is available in the [proce
 
 *Jump to @sec-lulc*  
 
-Land Use/Land Cover data was downloaded from the [USGS Annual National Land Cover Database](https://www.usgs.gov/centers/eros/science/annual-national-land-cover-database) in April 2025. Each pixel represents 30x30m.
+Land Use/Land Cover data was downloaded from the [USGS Annual National Land Cover Database](https://www.usgs.gov/centers/eros/science/annual-national-land-cover-database) in April 2025. Each pixel represents 30x30m. Citation: U.S. Geological Survey (USGS), 2024, Annual NLCD Collection 1 Science Products (ver. 1.1, June 2025): U.S. Geological Survey data release, https://doi.org/10.5066/P94UXNTS. 
 
 The original downloaded file, `Annual_NLCD_LndCov_2023_CU_C1V0.tif` (~1.4 GB), covers the entire continental US and is available in the [NLCD](https://drive.google.com/drive/folders/17NVwSFlhkudjbZlCnzCbWmLcr52NuyHR?usp=drive_link) folder of the [msepCharacterization data files](https://drive.google.com/drive/folders/1Oyyrrjl0ygswBak5gbybVLYf5ENGUHD4?usp=sharing) directory.  
 

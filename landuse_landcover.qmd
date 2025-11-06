@@ -10,7 +10,9 @@ library(tmap)
 library(tidyterra)
 library(tigris)
 options(tigris_use_cache = TRUE)
+```
 
+```{r}
 # render the maps interactively or statically
 out_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 
@@ -94,15 +96,36 @@ tm
 
 # static version of bigger view, to save and use in ccmp
 
-tm <- tm_shape(alla_sf) +
-    tm_basemap("CartoDB.Positron") +
-    tm_shape(lulc) +
+# first shrink it a bit
+lulc_view <- terra::aggregate(lulc, fact = 8, fun = modal, na.rm = TRUE)
+lulc_view <- as.factor(lulc_view)
+coltab(lulc_view) <- coltab(lulc)
+levels(lulc_view) <- lulc_types %>%
+  select(value, type) %>%
+  rename(ID = value)
+
+# current bounding box
+current_bbox <- tmaptools::bb(alla_sf)
+xrange <- current_bbox[3] - current_bbox[1]
+yrange <- current_bbox[4] - current_bbox[2]
+
+# base the new bounding box on the current one because of CRS,
+# and just fiddle with the values
+newbbox <- current_bbox
+newbbox[1] <- current_bbox[1] + 0.18*xrange   # xmin
+newbbox[2] <- current_bbox[2] + 0.1*yrange    # ymin
+newbbox[3] <- current_bbox[3] - 0.18*xrange   # xmax
+newbbox[4] <- current_bbox[4] - 0.25*yrange   # ymax
+
+tm_out <- tm_shape(lulc_view, bbox = newbbox) +
     tm_raster(title = "Land Cover Class") +
+    tm_basemap("CartoDB.Positron") +
     tm_shape(alla_sf) +
     tm_lines("gray10") +
     tm_shape(ms_sf) +
-    tm_lines("gray10") +
-    tm_layout(legend.outside = TRUE)
+    tm_lines("gray10")
+
+tmap_save(tm_out, here::here("LULC2023.png"))
 ```
 
 
