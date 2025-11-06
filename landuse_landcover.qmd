@@ -68,6 +68,32 @@ type_covers |>
 
 ## Map  
 
+
+Downsize it to make an interactive map.
+
+```{r}
+lulc_view <- terra::aggregate(lulc, fact = 8, fun = modal, na.rm = TRUE)
+
+lulc_view <- as.factor(lulc_view)
+coltab(lulc_view) <- coltab(lulc)
+levels(lulc_view) <- lulc_types %>%
+  select(value, type) %>%
+  rename(ID = value)
+
+tm <- tm_shape(lulc_view) +
+    tm_basemap("CartoDB.Positron") +
+    tm_raster(title = "Land Cover Class") +
+    tm_shape(alla_sf) +
+    tm_lines("gray10") +
+    tm_shape(ms_sf) +
+    tm_lines("gray10") +
+    tm_layout(legend.outside = TRUE)
+
+tm
+```
+
+Full details, static:
+
 ```{r}
 tmap_mode("plot")
 
@@ -89,6 +115,7 @@ tm_shape(alla_sf) +
     tm_lines("gray10") +
     tm_layout(legend.outside = TRUE)
 ```
+
 
 ```{r}
 ggplot() +
