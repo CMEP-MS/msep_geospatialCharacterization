@@ -1,11 +1,102 @@
 # Land Use / Land Cover {#sec-lulc} 
 
 ```{r}
+library(tidyverse)
+library(sf)
+library(terra)
+library(tmap)
+library(tidyterra)
+library(tigris)
+options(tigris_use_cache = TRUE)
 
+# render the maps interactively or statically
+out_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+if (out_format == "html") {
+  message("Setting tmap mode to 'view'")
+  tmap_mode("view")
+} else {
+  message("Setting tmap mode to 'plot'")
+  tmap_mode("plot")
+}
+```
+
+```{r}
+fl <- here::here("data", "processed",
+                 "NLCD_MSEP.tif")
+
+lulc <- rast(fl)
+lulc_types <- as.data.frame(levels(lulc))
+```
+
+```{r}
+# state shapes
+ms_sf <- states(cb = TRUE, progress_bar = FALSE) |>
+    filter(NAME == "Mississippi") |> 
+    st_transform(crs = st_crs(lulc))
+alla_sf <- states(cb = TRUE, progress_bar = FALSE) |>
+    filter(NAME %in% c("Alabama", "Louisiana")) |> 
+    st_transform(crs = st_crs(lulc))
 ```
 
 
-Summarize LULC info by MDEQ basin here  
+## Summary of Land Cover Types  
+
+```{r}
+type_covers <- table(values(lulc)) |> 
+    as.data.frame() 
+
+type_covers <- type_covers |> 
+    mutate(value = as.numeric(as.character(Var1))) |>
+    select(-Var1) |> 
+    left_join(lulc_types)
+
+sumpixels <- sum(type_covers$Freq)
+
+type_covers <- type_covers |> 
+    dplyr::mutate(pct_cover = round(100 * Freq / sumpixels, 1))
+```
+
+```{r}
+type_covers |> 
+    select(value,
+           `Land Cover Class` = type,
+           `Percent of Watershed` = pct_cover) |> 
+    gt::gt()
+```
+
+
+## Map  
+
+```{r}
+tmap_mode("plot")
+
+tm_shape(lulc) +
+    tm_raster(title = "Land Cover Class") +
+    tm_layout(legend.outside = TRUE)
+```
+
+With the states:
+
+```{r}
+tm_shape(alla_sf) +
+    tm_basemap("CartoDB.Positron") +
+    tm_shape(lulc) +
+    tm_raster(title = "Land Cover Class") +
+    tm_shape(alla_sf) +
+    tm_lines("gray10") +
+    tm_shape(ms_sf) +
+    tm_lines("gray10") +
+    tm_layout(legend.outside = TRUE)
+```
+
+```{r}
+ggplot() +
+    geom_spatraster(data = lulc,
+                    aes(fill = type)) +
+    theme_bw() +
+    labs(fill = "")
+```
 
 
 
