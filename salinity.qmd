@@ -1,11 +1,131 @@
 # Salinity {#sec-salinity}  
 
+Data for this section was obtained from the [Gulf Data Atlas](https://gulfatlas.noaa.gov/). This was part of a larger effort to characterize seasonality in Gulf Coast estuaries, by assigning salinity zones in different time periods, based on long-term data. See [Appendix @sec-processingSalinity] for more detail.  
+
+To view more recent data from USGS stations in the Mississippi Sound, check out our interactive [Mississippi Sound Salinity Explorer App](https://cmep-ms.shinyapps.io/SalinityExplorer/)!
+
 ```{r}
+library(sf)
+library(dplyr)
+library(msepBoundaries)
+library(tmap)
+
+# render the maps interactively or statically
+out_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+if (out_format == "html") {
+  message("Setting tmap mode to 'view'")
+  tmap_mode("view")
+} else {
+  message("Setting tmap mode to 'plot'")
+  tmap_mode("plot")
+}
+```
+
+```{r}
+tmap_options(component.autoscale = FALSE)
+coastal_bb <- st_bbox(c(xmin = -89.80829, xmax = -87.71594,
+                   ymin = 29.81824, ymax = 30.89847),
+                 crs = st_crs(4269))
+
+msep_outline <- outline_full |> 
+    st_transform(crs = st_crs(4269))
+
+# make_sal_map <- function(data, fill_var, map_title) {
+#     m <- tm_shape(data, bbox = coastal_bb) +
+#         tm_basemap("CartoDB.Positron") +
+#         tm_fill(fill = fill_var,
+#                 fill.scale = tm_scale_categorical(values = "brewer.yl_gn_bu"),
+#                 fill.legend = tm_legend(
+#                     title = "Salinity (psu)",
+#                     position = tm_pos_in("right", "bottom"),
+#                     bg.color = adjustcolor("white", alpha.f = 0.8)
+#                 )) +
+#         tm_shape(msep_outline) +
+#         tm_borders(col = "black", lwd = 2) +
+#         tm_title(map_title)
+#     
+#     m
+# }
+```
+
+```{r}
+dat <- st_read(here::here("data",
+                          "processed",
+                          "salinity_gulfDataAtlas",
+                          "MS_SalSeasons.shp"),
+               quiet = TRUE)
+
+# Ensure SAL_LOW and SAL_HIGH are factors with the correct levels
+dat$SAL_LOW <- factor(dat$SAL_LOW, levels = c("0-0.5", "0.5-5", "05-15", "15-25", ">25"))
+dat$SAL_HIGH <- factor(dat$SAL_HIGH, levels = c("0-0.5", "0.5-5", "05-15", "15-25", ">25"))
+```
+
+```{r}
+#| label: fig-mapLow
+#| fig-cap: "Average salinity (psu) during the low salinity period, February - April. Data layer courtesy of the Gulf Data Atlas."
+#| fig-width: 8
+#| fig-height: 6.5
+
+# tm_shape(dat, bbox = coastal_bb) +
+#         tm_basemap("CartoDB.Positron") +
+#         tm_fill(fill = "SAL_LOW",
+#                 fill.scale = tm_scale_categorical(values = "brewer.yl_gn_bu"),
+#                 fill.legend = tm_legend(
+#                     title = "Salinity (psu)",
+#                     position = tm_pos_in("right", "bottom"),
+#                     bg.color = adjustcolor("white", alpha.f = 0.8)
+#                 )) +
+#         tm_shape(msep_outline) +
+#         tm_borders(col = "black", lwd = 2) +
+#         tm_title("Low Salinity Period\n(Feb-Apr)")
+
+tm_shape(dat, bbox = coastal_bb) +
+    tm_fill(fill = "SAL_LOW",
+            fill.scale = tm_scale_categorical(values = "brewer.yl_gn_bu"),
+            fill.legend = tm_legend(
+                position = tm_pos_in("right", "bottom"),
+                # bg.color = adjustcolor("white", alpha.f = 0.8),
+                title = "Salinity (psu)")
+            ) +
+    tm_basemap("CartoDB.Positron") +
+    tm_shape(msep_outline) +
+    tm_borders(col = "black", lwd = 2)
+```
+
+```{r}
+#| label: fig-mapHigh
+#| fig-cap: "Average salinity (psu) during the high salinity period, August - October. Data layer courtesy of the Gulf Data Atlas."
+#| fig-width: 8
+#| fig-height: 6.5
+
+# tm_shape(dat, bbox = coastal_bb) +
+#         tm_basemap("CartoDB.Positron") +
+#         tm_fill(fill = "SAL_HIGH",
+#                 fill.scale = tm_scale_categorical(values = "brewer.yl_gn_bu"),
+                # fill.legend = tm_legend(
+                #     title = "Salinity (psu)",
+                #     position = tm_pos_in("right", "bottom"),
+                #     bg.color = adjustcolor("white", alpha.f = 0.8)
+                # )) +
+#         tm_shape(msep_outline) +
+#         tm_borders(col = "black", lwd = 2) +
+#         tm_title("High Salinity Period\n(Aug-Oct)")
+
+tm_shape(dat, bbox = coastal_bb) +
+    tm_fill(fill = "SAL_HIGH",
+            fill.scale = tm_scale_categorical(values = "brewer.yl_gn_bu"),
+            fill.legend = tm_legend(
+                position = tm_pos_in("right", "bottom"),
+                # bg.color = adjustcolor("white", alpha.f = 0.8),
+                title = "Salinity (psu)")
+            ) +
+    tm_basemap("CartoDB.Positron") +
+    tm_shape(msep_outline) +
+    tm_borders(col = "black", lwd = 2)
 
 ```
 
-
-Summarize the info from the Gulf Data Atlas (e.g. the maps that went into the CCMP). Would be great to summarize the USGS salinity data and DMR's sampling data as well - some seasonal and annual details would be great.  
 
 
 ## About {.unnumbered}   

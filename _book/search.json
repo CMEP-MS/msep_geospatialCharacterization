@@ -4,9 +4,19 @@
     "href": "index.html",
     "title": "Characteristics of the Mississippi Sound Estuary and Watershed",
     "section": "",
-    "text": "Preface\nThis website is a collection of documents characterizing the Mississippi Sound Watershed, primarily through use of geospatial data. The outputs are compiled as a ‘quarto book’. Each chapter is produced by a separate .qmd file.\nThe purpose of the book format is to make the outputs readily findable and accessible. It may also serve as an outline for future undertakings like the State of the Sound report.",
+    "text": "Preface\nThis website is a collection of documents characterizing the Mississippi Sound Watershed, primarily through use of geospatial data. The outputs are compiled as a ‘quarto book’. Each chapter is produced by a separate .qmd file.\nThe purpose of the book format is to make the outputs readily findable and accessible. It may also serve as an outline for future undertakings like the State of the Sound report.\nYou can download a pdf version of this entire book by clicking on the pdf icon on the right side of the toolbar at the top of this page.",
     "crumbs": [
       "Preface"
+    ]
+  },
+  {
+    "objectID": "geographic_setting.html",
+    "href": "geographic_setting.html",
+    "title": "Geographic Setting",
+    "section": "",
+    "text": "Some info here about different ways of describing where we are and what comprises the watershed: USGS HUCs, DEQ’s division into different basins, and EPA EcoRegions.\nPossibly also the definitions from the CCMP of MS Sound, MS Sound Estuary, and MS Sound Watershed.",
+    "crumbs": [
+      "Geographic Setting"
     ]
   },
   {
@@ -47,7 +57,7 @@
     "href": "EPA_Ecoregions.html",
     "title": "2  EPA Ecoregions",
     "section": "",
-    "text": "2.1 Level 3 Ecoregions\nFigure 2.1: Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black.\nThe Mississippi Sound Watershed contains 4 level-3 ecoregions:\nFigure 2.2: Level 3 Ecoregions in the Mississippi Sound Watershed only.",
+    "text": "2.1 Level 3 Ecoregions\nFor some geological classification that isn’t based on watershed boundaries, we turn to the EPA’s Ecoregions.\nFigure 2.1: Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black.\nThe Mississippi Sound Watershed contains 4 level-3 ecoregions:\nFigure 2.2: Level 3 Ecoregions in the Mississippi Sound Watershed only.",
     "crumbs": [
       "Geographic Setting",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>EPA Ecoregions</span>"
@@ -87,11 +97,21 @@
     ]
   },
   {
+    "objectID": "climatology.html",
+    "href": "climatology.html",
+    "title": "Climatology",
+    "section": "",
+    "text": "Pieces of this part will be things like precipitation, temperature, etc.",
+    "crumbs": [
+      "Climatology"
+    ]
+  },
+  {
     "objectID": "precipitation.html",
     "href": "precipitation.html",
     "title": "3  Precipitation",
     "section": "",
-    "text": "3.1 Annual Totals\nThe coast receives more rain annually than more inland portions of Louisiana, Mississippi, and Alabama (Figure 3.1). Based on 30-year climate normals (1991-2020), median annual precipitation in the Mississippi Sound Watershed is 60 inches. The lowest annual totals, around 56 inches per year, occur in the northern part of the watershed, with coastal areas receiving around 66 inches per year. These 30-year normals are somewhat higher than the 100-year baseline period of 1901-2000 (min: 52 in; median: 58 in; max: 64 in).\nFigure 3.1: Annual Precipitation averaged over 100, 30, and 15 years.",
+    "text": "3.1 Annual Totals\nThe maps and information below were generated from gridded (spatial) climate normals: values averaged over 15, 30, or 100 years. Data were obtained from the National Centers for Environmental Information (NCEI).\nThe coast receives more rain annually than more inland portions of Louisiana, Mississippi, and Alabama (Figure 3.1). Based on 30-year climate normals (1991-2020), median annual precipitation in the Mississippi Sound Watershed is 60 inches. The lowest annual totals, around 56 inches per year, occur in the northern part of the watershed, with coastal areas receiving around 66 inches per year. These 30-year normals are somewhat higher than the 100-year baseline period of 1901-2000 (min: 52 in; median: 58 in; max: 64 in).\nFigure 3.1: Annual Precipitation averaged over 100, 30, and 15 years.",
     "crumbs": [
       "Climatology",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Precipitation</span>"
@@ -124,7 +144,7 @@
     "href": "temperature.html",
     "title": "4  Temperature",
     "section": "",
-    "text": "4.1 Annual Mean Temperature\nFigure 4.1: Annual Mean Temperature averaged over 100, 30, and 15 years.",
+    "text": "4.1 Annual Mean Temperature\nThe maps and information below were generated from gridded (spatial) climate normals: values averaged over 15, 30, or 100 years. Data were obtained from the National Centers for Environmental Information (NCEI).\nFigure 4.1: Annual Mean Temperature averaged over 100, 30, and 15 years.",
     "crumbs": [
       "Climatology",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Temperature</span>"
@@ -150,6 +170,16 @@
     "crumbs": [
       "Climatology",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "hydrology.html",
+    "href": "hydrology.html",
+    "title": "Hydrology",
+    "section": "",
+    "text": "Freshwater inflows from the different sources, salinity characteristics, etc.",
+    "crumbs": [
+      "Hydrology"
     ]
   },
   {
@@ -212,7 +242,7 @@
     "href": "freshwater_inflows.html",
     "title": "6  Freshwater Inflows",
     "section": "",
-    "text": "About\nThe .qmd file that generated this section was: freshwater_inflows.qmd.\nFor information on data processing, see Appendix A.3.2.",
+    "text": "About\nPearl River, Pascagoula River, bays. Do some summarizing based on USGS gage data?\nThe .qmd file that generated this section was: freshwater_inflows.qmd.\nFor information on data processing, see Appendix A.3.2.",
     "crumbs": [
       "Hydrology",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Freshwater Inflows</span>"
@@ -223,10 +253,20 @@
     "href": "salinity.html",
     "title": "7  Salinity",
     "section": "",
-    "text": "About\nThe .qmd file that generated this section was: salinity.qmd.\nFor information on data processing, see Appendix A.3.3.",
+    "text": "About\nData for this section was obtained from the Gulf Data Atlas. This was part of a larger effort to characterize seasonality in Gulf Coast estuaries, by assigning salinity zones in different time periods, based on long-term data. See Appendix A.3.3 for more detail.\nTo view more recent data from USGS stations in the Mississippi Sound, check out our interactive Mississippi Sound Salinity Explorer App!\nThe .qmd file that generated this section was: salinity.qmd.\nFor information on data processing, see Appendix A.3.3.",
     "crumbs": [
       "Hydrology",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Salinity</span>"
+    ]
+  },
+  {
+    "objectID": "people_and_land_use.html",
+    "href": "people_and_land_use.html",
+    "title": "People and Land Use",
+    "section": "",
+    "text": "Here’s where population calculations and land use/land cover summaries can be generated.",
+    "crumbs": [
+      "People and Land Use"
     ]
   },
   {
@@ -234,7 +274,7 @@
     "href": "population.html",
     "title": "8  Population",
     "section": "",
-    "text": "8.1 Entire watershed\nThis estimate includes the portions of the watershed in Louisiana and Alabama:\n1,718,504",
+    "text": "8.1 Entire watershed\nThe values calculated below are based on 2020 US Census data. The population estimate for the entire state of Mississippi was ~2.96 million in 2020.\nThis estimate includes the portions of the watershed in Louisiana and Alabama:\n1,718,504",
     "crumbs": [
       "People and Land Use",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Population</span>"
@@ -267,7 +307,7 @@
     "href": "landuse_landcover.html",
     "title": "9  Land Use / Land Cover",
     "section": "",
-    "text": "9.1 Summary of Land Cover Types\nvalue\nLand Cover Class\nPercent of Watershed\n\n\n\n\n11\nOpen Water\n6.4\n\n\n21\nDeveloped, Open Space\n5.8\n\n\n22\nDeveloped, Low Intensity\n2.5\n\n\n23\nDeveloped, Medium Intensity\n0.8\n\n\n24\nDeveloped, High Intensity\n0.2\n\n\n31\nBarren Land (Rock/Sand/Clay)\n0.4\n\n\n41\nDeciduous Forest\n1.0\n\n\n42\nEvergreen Forest\n29.6\n\n\n43\nMixed Forest\n8.8\n\n\n52\nShrub/Scrub\n4.2\n\n\n71\nGrassland/Herbaceous\n4.1\n\n\n81\nPasture/Hay\n13.4\n\n\n82\nCultivated Crops\n0.8\n\n\n90\nWoody Wetlands\n20.8\n\n\n95\nEmergent Herbaceous Wetlands\n1.3",
+    "text": "9.1 Summary of Land Cover Types\nThe following information was generated using 2023 data from the USGS Annual National Land Cover Database. See Section A.4.2 for more detail.\nvalue\nLand Cover Class\nPercent of Watershed\n\n\n\n\n11\nOpen Water\n6.4\n\n\n21\nDeveloped, Open Space\n5.8\n\n\n22\nDeveloped, Low Intensity\n2.5\n\n\n23\nDeveloped, Medium Intensity\n0.8\n\n\n24\nDeveloped, High Intensity\n0.2\n\n\n31\nBarren Land (Rock/Sand/Clay)\n0.4\n\n\n41\nDeciduous Forest\n1.0\n\n\n42\nEvergreen Forest\n29.6\n\n\n43\nMixed Forest\n8.8\n\n\n52\nShrub/Scrub\n4.2\n\n\n71\nGrassland/Herbaceous\n4.1\n\n\n81\nPasture/Hay\n13.4\n\n\n82\nCultivated Crops\n0.8\n\n\n90\nWoody Wetlands\n20.8\n\n\n95\nEmergent Herbaceous Wetlands\n1.3",
     "crumbs": [
       "People and Land Use",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Land Use / Land Cover</span>"
@@ -310,7 +350,7 @@
     "href": "data_processing.html",
     "title": "Appendix A: Data Processing",
     "section": "",
-    "text": "A.1 Geographic Setting",
+    "text": "A.1 Geographic Setting\nIn general, links to original data sources are provided in each section below. Because data files are routinely updated, the files as downloaded and used in this document are also available online. These files are provided for reproducibility and transparency; for your own analyses, we encourage you to seek out data from the original linked sources.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
@@ -343,7 +383,7 @@
     "href": "data_processing.html#hydrology",
     "title": "Appendix A: Data Processing",
     "section": "A.3 Hydrology",
-    "text": "A.3 Hydrology\n\nA.3.1 Streams and Waterbodies\nJump to Chapter 5\n\nA.3.1.1 Stream Lengths and Waterbody Areas\nStream Lengths and Waterbody Areas were calculated from the EPA’s NHDPlus dataset. Files for the South Atlantic (03f) and Lower Mississippi River (03g) regions were downloaded on 12 June 2025. The original downloaded files are available in the EPA NHDPlus folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to only the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPANHD_subsetting.R (on github) in the R_preprocessing folder. The resulting files were saved as geopackages EPA_NHDplus_flowline_MSEP.gpkg and EPA_NHDplus_waterbody_MSEP.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.\n\n\nA.3.1.2 Designated Uses\nShapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ’s Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, “all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife.” See their website for more information.\nThe zipped shapefiles are available in the DEQ_designated_uses folder of the msepCharacterization data files directory. However, we encourage you to contact MDEQ to get the most up-to-date files for your own analyses.\n\n\nA.3.1.3 Impairments\nNot done yet but see MDEQ’s online TMDL Tool.\n\n\n\nA.3.2 Freshwater Inflows\nJump to Chapter 6\nStuff\n\n\nA.3.3 Salinity\nJump to Chapter 7\nStuff - Gulf Data Atlas especially",
+    "text": "A.3 Hydrology\n\nA.3.1 Streams and Waterbodies\nJump to Chapter 5\n\nA.3.1.1 Stream Lengths and Waterbody Areas\nStream Lengths and Waterbody Areas were calculated from the EPA’s NHDPlus dataset. Files for the South Atlantic (03f) and Lower Mississippi River (03g) regions were downloaded on 12 June 2025. The original downloaded files are available in the EPA NHDPlus folder of the msepCharacterization data files directory.\nThose files were read in, combined, and clipped to only the Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script EPANHD_subsetting.R (on github) in the R_preprocessing folder. The resulting files were saved as geopackages EPA_NHDplus_flowline_MSEP.gpkg and EPA_NHDplus_waterbody_MSEP.gpkg in the data/processed folder. These files are available in the processed folder of the msepCharacterization data files directory.\n\n\nA.3.1.2 Designated Uses\nShapefiles of designated uses, already limited to the portion of the Mississippi Sound Watershed that lies within the state of MS, were provided by the Mississippi Department of Environmental Quality (MDEQ) in April 2025. These files provide the designated uses for each waterbody from the 2015 Water Quality Standards dataset. The Mississippi Sound Watershed is made up of MDEQ’s Pearl River, Pascagoula River, and Coastal Streams basins. Per MDEQ, “all waters in those 3 basins not specifically listed in the data provided are classified as Fish and Wildlife.” See their website for more information.\nThe zipped shapefiles are available in the DEQ_designated_uses folder of the msepCharacterization data files directory. However, we encourage you to contact MDEQ to get the most up-to-date files for your own analyses.\n\n\nA.3.1.3 Impairments\nNot done yet but see MDEQ’s online TMDL Tool.\n\n\n\nA.3.2 Freshwater Inflows\nJump to Chapter 6\nStuff\n\n\nA.3.3 Salinity\nJump to Chapter 7\nSeasonal salinity summaries, according to the “Dynamic Five-Zone Salinity Scheme”, were downloaded as shapefiles from the Gulf Data Atlas on 3/19/2025. Only metadata files and files beginning with “MS” were retained (to keep only Mississippi Sound data). The shapefile and related information are in the salinity_gulfDataAtlas subfolder of the processed folder of the msepCharacterization data files directory.\nThe description of this data layer, also available online, is:\n&gt; This is an ArcGIS shapefile which depicts the seasonal salinity dynamics of 32 Gulf of Mexico estuaries. To characterize the dynamic nature of estuarine salinity gradients, a multivariate methodology (Bulger et al. 1993) was applied to derive five bio-salinity zones in four salinity seasons for 32 Gulf of Mexico estuaries (Christensen et al. 1997). This seasonal salinity zone spatial framework built upon and refined earlier studies which characterized salinity on an annual-averaged basis (NOAA 1985, Orlando et al. 1993, NOAA 2007). Precipitation, flow gage data, and monthly salinity averages were evaluated to determine which months would be used to represent the high, low, and transitional (increasing and decreasing) salinity periods. A contour modeling procedure was applied to the data to develop seasonal salinity zones for each estuary. The salinities used to define the five seasonal zones were: 1) Salinity Zone I: 0 - 0.5 ppt; 2) Salinity Zone II: 0.5 - 5 ppt; 3) Salinity Zone III: 5-15 ppt; 4) Salinity Zone IV: 15-25ppt; and 5) Salinity Zone IV: &gt;25ppt. These salinity zones are two-dimensional and depth-averaged, and vertical stratification is not explicitly characterized. Therefore, they can be readily represented geographically as two-dimensional areas, which shift seasonally. The monthly periods of high, low, increasing and decreasing salinity seasons vary greatly among estuaries, primarily because of different typical periods of high and low freshwater inflow. For example, the low salinity season in Galveston Bay, Texas occurs in April - June, while in Mobile Bay, Alabama, the low salinity season occurs in February - April.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
@@ -354,7 +394,7 @@
     "href": "data_processing.html#people-and-land-use",
     "title": "Appendix A: Data Processing",
     "section": "A.4 People and Land Use",
-    "text": "A.4 People and Land Use\n\nA.4.1 Population\nJump to Chapter 8\n\nA.4.1.1 Dasymetric Population Estimates\nThe EPA EnviroAtlas’s dasymetric population datasets “intelligently reallocate … population from census blocks to 30 meter pixels based on land cover and slope”. The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.\nThe original downloaded file (zipped; ~3.6 GB) is available in the Population folder of the msepCharacterization data files directory.\nThe dataset was trimmed to Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script Population_2020_subsetting.R (on github) in the R_preprocessing folder.\nThe resulting file, Population_Dasymetric_2020.tif, is available in the processed folder of the msepCharacterization data files directory.\n\n\n\nA.4.2 Land Use / Land Cover\nJump to Chapter 9\nLand Use/Land Cover data was downloaded from the USGS Annual National Land Cover Database in April 2025. Each pixel represents 30x30m.\nThe original downloaded file, Annual_NLCD_LndCov_2023_CU_C1V0.tif (~1.4 GB), covers the entire continental US and is available in the NLCD folder of the msepCharacterization data files directory.\nThe dataset was trimmed to Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script NLCD_subsetting.R (on github) in the R_preprocessing folder. Factor levels associated with the NLCD categories were also associated during this process and are part of the auxiliary file that loads with the dataset in R.\nThe resulting files, NLCD_MSEP.tif and NLCD_MSEP.tif.aux.xml (the file with associated factor levels), are available in the processed folder of the msepCharacterization data files directory.",
+    "text": "A.4 People and Land Use\n\nA.4.1 Population\nJump to Chapter 8\n\nA.4.1.1 Dasymetric Population Estimates\nThe EPA EnviroAtlas’s dasymetric population datasets “intelligently reallocate … population from census blocks to 30 meter pixels based on land cover and slope”. The national datasets for 2010 and 2020 were downloaded as raster files on 24 July 2025. Only the 2020 dataset has been used here.\nThe original downloaded file (zipped; ~3.6 GB) is available in the Population folder of the msepCharacterization data files directory.\nThe dataset was trimmed to Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script Population_2020_subsetting.R (on github) in the R_preprocessing folder.\nThe resulting file, Population_Dasymetric_2020.tif, is available in the processed folder of the msepCharacterization data files directory.\n\n\n\nA.4.2 Land Use / Land Cover\nJump to Chapter 9\nLand Use/Land Cover data was downloaded from the USGS Annual National Land Cover Database in April 2025. Each pixel represents 30x30m. Citation: U.S. Geological Survey (USGS), 2024, Annual NLCD Collection 1 Science Products (ver. 1.1, June 2025): U.S. Geological Survey data release, https://doi.org/10.5066/P94UXNTS.\nThe original downloaded file, Annual_NLCD_LndCov_2023_CU_C1V0.tif (~1.4 GB), covers the entire continental US and is available in the NLCD folder of the msepCharacterization data files directory.\nThe dataset was trimmed to Mississippi Sound Watershed boundaries (using the outline_full object from the {msepBoundaries} package) using the script NLCD_subsetting.R (on github) in the R_preprocessing folder. Factor levels associated with the NLCD categories were also associated during this process and are part of the auxiliary file that loads with the dataset in R.\nThe resulting files, NLCD_MSEP.tif and NLCD_MSEP.tif.aux.xml (the file with associated factor levels), are available in the processed folder of the msepCharacterization data files directory.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
@@ -369,46 +409,6 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Data Processing</span>"
-    ]
-  },
-  {
-    "objectID": "geographic_setting.html",
-    "href": "geographic_setting.html",
-    "title": "Geographic Setting",
-    "section": "",
-    "text": "Some info here about different ways of describing where we are and what comprises the watershed: USGS HUCs, DEQ’s division into different basins, and EPA EcoRegions.\nPossibly also the definitions from the CCMP of MS Sound, MS Sound Estuary, and MS Sound Watershed.",
-    "crumbs": [
-      "Geographic Setting"
-    ]
-  },
-  {
-    "objectID": "climatology.html",
-    "href": "climatology.html",
-    "title": "Climatology",
-    "section": "",
-    "text": "Pieces of this part will be things like precipitation, temperature, etc.",
-    "crumbs": [
-      "Climatology"
-    ]
-  },
-  {
-    "objectID": "hydrology.html",
-    "href": "hydrology.html",
-    "title": "Hydrology",
-    "section": "",
-    "text": "Freshwater inflows from the different sources, salinity characteristics, etc.",
-    "crumbs": [
-      "Hydrology"
-    ]
-  },
-  {
-    "objectID": "people_and_land_use.html",
-    "href": "people_and_land_use.html",
-    "title": "People and Land Use",
-    "section": "",
-    "text": "Here’s where population calculations and land use/land cover summaries can be generated.",
-    "crumbs": [
-      "People and Land Use"
     ]
   }
 ]

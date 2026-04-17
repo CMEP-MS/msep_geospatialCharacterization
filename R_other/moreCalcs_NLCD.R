@@ -50,7 +50,7 @@ type_covers3 <- type_covers3 |>
 sumpixels3 <- sum(type_covers3$Freq)
 
 type_covers3 <- type_covers3 |> 
-    dplyr::mutate(pct_cover = round(100 * Freq / sumpixels, 1))
+    dplyr::mutate(pct_cover = round(100 * Freq / sumpixels3, 1))
 
 type_covers3 |> 
     select(value,

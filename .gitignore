@@ -11,3 +11,5 @@ outputs/
 LULC2023.png
 
 /.quarto/
+
+**/*.quarto_ipynb

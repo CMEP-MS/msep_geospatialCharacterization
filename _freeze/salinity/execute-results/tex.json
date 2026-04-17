@@ -1,8 +1,8 @@
 {
-  "hash": "997870d5b0ecfc65d1544fa626bc2fea",
+  "hash": "7195d8f12e62d789d7e65bba9c05c94e",
   "result": {
     "engine": "knitr",
-    "markdown": "# Salinity {#sec-salinity}  \n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\nSummarize the info from the Gulf Data Atlas (e.g. the maps that went into the CCMP). Would be great to summarize the USGS salinity data and DMR's sampling data as well - some seasonal and annual details would be great.  \n\n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **salinity.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingSalinity].",
+    "markdown": "# Salinity {#sec-salinity}  \n\nData for this section was obtained from the [Gulf Data Atlas](https://gulfatlas.noaa.gov/). This was part of a larger effort to characterize seasonality in Gulf Coast estuaries, by assigning salinity zones in different time periods, based on long-term data. See [Appendix @sec-processingSalinity] for more detail.  \n\nTo view more recent data from USGS stations in the Mississippi Sound, check out our interactive [Mississippi Sound Salinity Explorer App](https://cmep-ms.shinyapps.io/SalinityExplorer/)!\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![Average salinity (psu) during the low salinity period, February - April. Data layer courtesy of the Gulf Data Atlas.](salinity_files/figure-pdf/fig-mapLow-1.pdf){#fig-mapLow}\n:::\n:::\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![Average salinity (psu) during the high salinity period, August - October. Data layer courtesy of the Gulf Data Atlas.](salinity_files/figure-pdf/fig-mapHigh-1.pdf){#fig-mapHigh}\n:::\n:::\n\n\n\n\n## About {.unnumbered}   \n\n**The `.qmd` file** that generated this section was: **salinity.qmd**. \n\nFor information on data processing, see [Appendix @sec-processingSalinity].",
     "supporting": [
       "salinity_files"
     ],
