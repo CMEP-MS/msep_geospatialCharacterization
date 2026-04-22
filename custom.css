@@ -1,3 +1,24 @@
+/* Navbar background color */
+.navbar {
+  background-color: #d3e2e5 !important;
+}
+
+/* Navbar text and links */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link,
+.navbar-brand,
+.navbar .navbar-brand {
+  color: #20434a !important;
+}
+
+/* All navbar icons and buttons */
+.navbar a,
+.navbar button,
+.navbar .quarto-navbar-tools a,
+.navbar .quarto-navbar-tools button {
+  color: #20434a !important;
+}
+
 /* Make all child divs in a tmap legend left-aligned */
 .info.legend > div {
   text-align: left !important;

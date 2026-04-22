@@ -59,6 +59,7 @@ book:
 
 
 # bibliography: references.bib
+brand: _brand.yml
 
 format:
   html:
