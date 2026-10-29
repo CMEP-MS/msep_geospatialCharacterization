@@ -2,6 +2,7 @@
 
 ```{r}
 library(tidyverse)
+library(mseptools)
 library(msepBoundaries)
 library(sf)
 library(units)
@@ -222,8 +223,8 @@ msep_boundary <- outline_full |>
 #| label: fig-desigUse-map
 #| fig-cap: "Designated uses of streams and waterbodies of the Mississippi Sound Watershed (navy outline on map), within the state of MS, as defined by MDEQ in the 2015 Water Quality Standards dataset. Data provided by MDEQ."
 
-tm_shape(ms_sf) +
-    tm_basemap("CartoDB.Positron") +
+tm <- tm_shape(ms_sf) +
+    tm_basemap() +
     tm_lines(col = "gray20") +
     tm_shape(msep_boundary) +
     tm_lines(col = "navy") +
@@ -243,6 +244,7 @@ tm_shape(ms_sf) +
     ) +
     tm_layout(frame = FALSE)
 
+tmap_hydro(tm)
 ```
 
 

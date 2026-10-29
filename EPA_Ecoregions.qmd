@@ -7,6 +7,7 @@ library(tidyverse)
 library(sf)
 library(tmap)
 library(msepBoundaries)
+library(mseptools)
 
 # render the maps interactively or statically
 out_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
@@ -41,8 +42,8 @@ msep_boundary <- outline_full |>
 #| label: fig-l3ecoall
 #| fig-cap: "Level 3 Ecoregions in Louisiana, Mississippi, and Alabama; the Mississippi Sound Watershed is outlined in black."
 
-tm_shape(all3) +
-    tm_basemap("CartoDB.Positron") +
+m1 <- tm_shape(all3) +
+    tm_basemap() +
     tm_polygons(fill = "L3_KEY",
              fill_alpha = 0.8,
              fill.scale = tm_scale(values = "viridis"),
@@ -52,6 +53,8 @@ tm_shape(all3) +
     tm_shape(msep_boundary) +
     tm_lines(col = "black",
              lwd = 3)
+
+tmap_hydro(m1)
 ```
 
 The Mississippi Sound Watershed contains 4 level-3 ecoregions:  
@@ -65,8 +68,8 @@ The Mississippi Sound Watershed contains 4 level-3 ecoregions:
 #| label: fig-l3ecomssnd
 #| fig-cap: "Level 3 Ecoregions in the Mississippi Sound Watershed only."
 
-tm_shape(msep3) +
-    tm_basemap("CartoDB.Positron") +
+m2 <- tm_shape(msep3) +
+    tm_basemap() +
     tm_polygons(fill = "L3_KEY",
              fill_alpha = 0.8,
              fill.scale = tm_scale(values = "viridis"),
@@ -75,6 +78,8 @@ tm_shape(msep3) +
              )) +
     tm_shape(msep_boundary) +
     tm_lines(col = "black")
+
+tmap_hydro(m2)
 ```
 
 
@@ -84,8 +89,8 @@ tm_shape(msep3) +
 #| label: fig-l4ecomssnd
 #| fig-cap: "Level 4 Ecoregions in the Mississippi Sound Watershed."
 
-tm_shape(msep4) +
-    tm_basemap("CartoDB.Positron") +
+m3 <- tm_shape(msep4) +
+    tm_basemap() +
     tm_polygons(fill = "L4_KEY",
              fill_alpha = 0.8,
              fill.scale = tm_scale(values = "viridis"),
@@ -94,6 +99,8 @@ tm_shape(msep4) +
              )) +
     tm_shape(msep_boundary) +
     tm_lines(col = "black") 
+
+tmap_hydro(m3)
 ```
 
 
